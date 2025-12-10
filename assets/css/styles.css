@@ -544,6 +544,26 @@ footer .copyright {
   box-shadow: none;
 }
 
+.work-gallery {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.work-item {
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+
+.work-item:hover {
+  transform: scale(1.05);
+}
+
 .process-steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -626,7 +646,7 @@ footer .copyright {
 }
 
 .service-cta .btn {
-  background: var(--negro);
+  background: var(--naranja);
   color: var(--blanco);
 }
 
