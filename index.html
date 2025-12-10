@@ -3,287 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Customize It ayuda a negocios de servicios en Santa Maria, CA con uniformes, rotulación y diseño gráfico." />
-  <title>Customize It | Uniformes, Rotulación y Diseño Gráfico</title>
+  <meta name="description" content="Customize It crea uniformes, rotulación y diseño gráfico para negocios que quieren proyectar una imagen profesional." />
+  <title>Customize It | Imagen Profesional</title>
   <link rel="icon" href="/assets/images/logos/customize_it_logo_web-08.png" type="image/png" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
-  <script src="https://static.elfsight.com/platform/platform.js" async></script>
 </head>
 <body>
   <header>
-    <div class="container navbar">
-      <a class="navbar__brand" href="#hero">
-        <img src="/assets/images/logos/customize_it_logo_web-04.png" alt="Customize It" />
-      </a>
-      <button class="navbar__toggle" aria-label="Abrir menú" aria-expanded="false" data-toggle-nav>☰</button>
-      <nav>
-        <ul class="navbar__menu" data-menu>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#testimonios">Testimonios</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
+    <div class="header-inner">
+      <img src="/assets/images/logos/customize_it_logo_web-04.png" alt="Customize It" class="logo" />
+      <nav class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#trabajos">Trabajos</a>
+        <a href="#contacto">Contacto</a>
       </nav>
-      <div class="navbar__cta" data-menu-cta>
-        <a class="btn-primary" href="#cta">Cotización</a>
-      </div>
+      <a href="#contacto" class="btn-cta">Cotización</a>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <span class="hero-tag">CUSTOMIZE IT • SANTA MARIA, CA</span>
-          <h1>Uniformes, Rotulación y Diseño Gráfico</h1>
-          <p>Proyecta una imagen profesional desde que llegas a dar estimados.</p>
-          <ul class="hero-benefits">
-            <li>Deja de improvisar con playeras diferentes</li>
-            <li>Atiende a tus clientes como empresa</li>
-            <li>Todo en un solo lugar</li>
-          </ul>
-          <div class="hero-buttons">
-            <a class="btn-primary" href="#cta">Solicita tu cotización</a>
-            <a class="btn-secondary" href="#servicios">Ver servicios</a>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Tu imagen profesional empieza aquí</h1>
+        <p>Uniformes · Rotulación · Diseño Gráfico</p>
+        <a href="#contacto" class="btn">Solicita cotización</a>
+      </div>
+    </section>
+
+    <section class="servicios" id="servicios">
+      <div class="servicios-grid">
+        <div class="servicio-item" style="background-image: url('https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=800');">
+          <div class="content">
+            <h3>Uniformes</h3>
+            <p>Bordado y estampado profesional</p>
           </div>
         </div>
-        <div class="hero-image">
-          <div class="image-placeholder">📸 Foto: Truck rotulado</div>
+        <div class="servicio-item" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800');">
+          <div class="content">
+            <h3>Rotulación</h3>
+            <p>Vehículos que generan confianza</p>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section class="benefits-section">
-      <div class="container benefits-list">
-        <div class="benefit-item"><span class="icon">✓</span>+20 años de experiencia</div>
-        <div class="benefit-item"><span class="icon">✓</span>Atención en español</div>
-        <div class="benefit-item"><span class="icon">✓</span>Showroom local</div>
-        <div class="benefit-item"><span class="icon">✓</span>Entrega rápida</div>
-      </div>
-    </section>
-
-    <section class="industries-section" id="industrias">
-      <div class="container">
-        <p class="industries-title">Ayudamos a negocios de servicios como tú</p>
-        <div class="industries-grid">
-          <div class="industry-item"><span class="icon">🔧</span><span>Plomeros</span></div>
-          <div class="industry-item"><span class="icon">🌳</span><span>Landscaping</span></div>
-          <div class="industry-item"><span class="icon">🏠</span><span>Roofing</span></div>
-          <div class="industry-item"><span class="icon">❄️</span><span>HVAC</span></div>
-          <div class="industry-item"><span class="icon">🧹</span><span>Limpieza</span></div>
-          <div class="industry-item"><span class="icon">⚡</span><span>Electricistas</span></div>
-          <div class="industry-item"><span class="icon">🎨</span><span>Pintores</span></div>
-          <div class="industry-item"><span class="icon">🚚</span><span>Mudanzas</span></div>
-          <div class="industry-item"><span class="icon">🪟</span><span>Windows</span></div>
-          <div class="industry-item"><span class="icon">🏗️</span><span>Construcción</span></div>
-          <div class="industry-item"><span class="icon">🔩</span><span>Handyman</span></div>
-          <div class="industry-item"><span class="icon">🚿</span><span>Pool Service</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="problems-section" id="problemas">
-      <div class="container">
-        <h2>¿Tu negocio se ve tan profesional como tu trabajo?</h2>
-        <div class="problem-grid">
-          <article class="problem-card">
-            <div class="icon">👕</div>
-            <h3>Uniformes inconsistentes</h3>
-            <p>Tu equipo llega con ropa distinta o sin logo.</p>
-          </article>
-          <article class="problem-card">
-            <div class="icon">🚐</div>
-            <h3>Truck sin rotular</h3>
-            <p>Tu camioneta sigue en blanco, sin presencia.</p>
-          </article>
-          <article class="problem-card">
-            <div class="icon">📋</div>
-            <h3>Imagen amateur</h3>
-            <p>Tus tarjetas no reflejan lo bien que trabajas.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="services-section" id="servicios">
-      <div class="container">
-        <h2>Dale forma profesional a tu imagen</h2>
-        <p>Soluciones integrales para que llegues con confianza a cada cliente.</p>
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="floating-icon">👔</div>
-            <h3>Uniformes personalizados</h3>
-            <p>Prendas que aguantan el trabajo diario con tu logo bordado o estampado.</p>
-            <a class="link" href="/servicios/uniformes.html">Ver más →</a>
-          </article>
-          <article class="service-card">
-            <div class="floating-icon">🚚</div>
-            <h3>Rotulación vehicular</h3>
-            <p>Convierte tu truck en un anuncio rodante que genera confianza.</p>
-            <a class="link" href="/servicios/rotulacion.html">Ver más →</a>
-          </article>
-          <article class="service-card">
-            <div class="floating-icon">🎨</div>
+        <div class="servicio-item" style="background-image: url('https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?w=800');">
+          <div class="content">
             <h3>Diseño gráfico</h3>
-            <p>Logos y artes que representan tu negocio profesionalmente.</p>
-            <a class="link" href="/servicios/diseno-grafico.html">Ver más →</a>
-          </article>
-          <article class="service-card">
-            <div class="floating-icon">⚡</div>
+            <p>Logos e identidad visual</p>
+          </div>
+        </div>
+        <div class="servicio-item" style="background-image: url('https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800');">
+          <div class="content">
             <h3>Grabado láser</h3>
-            <p>Personalización de alta precisión en metal, madera, vidrio y más.</p>
-            <a class="link" href="/servicios/grabado-laser.html">Ver más →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="why-section" id="por-que">
-      <div class="container">
-        <h2>Sabemos lo que necesitas</h2>
-        <div class="why-grid">
-          <article class="why-card"><span>✓</span>Más de 20 años de experiencia</article>
-          <article class="why-card"><span>✓</span>Atención en español, sin tecnicismos</article>
-          <article class="why-card"><span>✓</span>Showroom local en Santa Maria</article>
-          <article class="why-card"><span>✓</span>Pruebas visuales antes de producir</article>
-          <article class="why-card"><span>✓</span>Reordenes fáciles: todo queda guardado</article>
-        </div>
-      </div>
-    </section>
-
-    <section class="process-section" id="proceso">
-      <div class="container">
-        <h2>Así trabajamos contigo</h2>
-        <div class="process-steps">
-          <div class="process-step">
-            <div class="number">1</div>
-            <div>
-              <h3>Escríbenos</h3>
-              <p>Por WhatsApp o email.</p>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="number">2</div>
-            <div>
-              <h3>Manda fotos</h3>
-              <p>De tu truck o equipo actual.</p>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="number">3</div>
-            <div>
-              <h3>Recibe opciones</h3>
-              <p>Según tu presupuesto.</p>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="number">4</div>
-            <div>
-              <h3>Producción</h3>
-              <p>Local y con calidad.</p>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="number">5</div>
-            <div>
-              <h3>Entrega</h3>
-              <p>En taller o a domicilio.</p>
-            </div>
+            <p>Precisión en cada detalle</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="stats-section" id="estadisticas">
-      <div class="container stats-grid">
-        <div class="stat-item">
-          <div class="number">20+</div>
-          <div class="label">Años de experiencia</div>
-        </div>
-        <div class="stat-item">
-          <div class="number">500+</div>
-          <div class="label">Proyectos completados</div>
-        </div>
-        <div class="stat-item">
-          <div class="number">1000+</div>
-          <div class="label">Clientes atendidos</div>
-        </div>
-        <div class="stat-item">
-          <div class="number">100%</div>
-          <div class="label">Satisfacción</div>
+    <section class="trabajos" id="trabajos">
+      <h2>Nuestros trabajos</h2>
+      <div class="trabajos-grid">
+        <div class="trabajo-item" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600');"></div>
+        <div class="trabajo-item" style="background-image: url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600');"></div>
+        <div class="trabajo-item" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600');"></div>
+        <div class="trabajo-item" style="background-image: url('https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=600');"></div>
+        <div class="trabajo-item" style="background-image: url('https://images.unsplash.com/photo-1560472355-536de3962603?w=600');"></div>
+        <div class="trabajo-item" style="background-image: url('https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600');"></div>
+      </div>
+    </section>
+
+    <section class="testimonial">
+      <h2>Lo que dicen nuestros clientes</h2>
+      <div class="video-wrapper">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/0necdQ-wcTo" title="Testimonio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </section>
 
-    <section class="testimonials-section" id="testimonios">
-      <div class="container">
-        <h2>Clientes que ya llegan con confianza</h2>
-        <div class="elfsight-app-966e4656-3383-4ed3-89c6-45bc36dffdbe" data-elfsight-app-lazy></div>
-        <div class="testimonials-grid">
-          <article class="testimonial-card">
-            <p>“Ahora mis clientes me ven diferente desde que llego. La camioneta y los uniformes hacen toda la diferencia.”</p>
-            <p><strong>José R.</strong> · Contratista, Santa Maria</p>
-          </article>
-          <article class="testimonial-card">
-            <p>“Me explicaron todo paso a paso. No solo me dieron uniformes, me ayudaron a verme como empresa.”</p>
-            <p><strong>Pedro C.</strong> · Jardinería y limpieza</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-section" id="cta">
-      <div class="container">
-        <h2>¿Listo para dejar de improvisar?</h2>
-        <p>Escríbenos hoy y recibe opciones según tu trabajo y presupuesto.</p>
-        <a class="btn" href="mailto:luis@customizeitca.com">Quiero cotización personalizada</a>
-      </div>
+    <section class="cta" id="contacto">
+      <h2>¿Listo para proyectar tu imagen?</h2>
+      <a href="tel:8056310949" class="btn">Llámanos: (805) 631-0949</a>
     </section>
   </main>
 
-  <footer id="contacto">
-    <div class="container footer-grid">
-      <div>
-        <img src="/assets/images/logos/customize_it_logo_web-05.png" alt="Customize It logo" />
-        <p>134 B Inger Dr, Santa Maria, CA 93454<br />
-        (805) 631-0949<br />
-        luis@customizeitca.com<br />
-        Lunes a viernes, 9am – 6pm</p>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-info">
+        <img src="/assets/images/logos/customize_it_logo_web-05.png" alt="Customize It" />
+        <p>134 B Inger Dr, Santa Maria, CA 93454</p>
+        <p>(805) 631-0949</p>
+        <p>luis@customizeitca.com</p>
       </div>
-      <div>
-        <p class="footer-heading">Servicios</p>
-        <ul class="footer-list">
-          <li><a href="/servicios/uniformes.html">Uniformes</a></li>
-          <li><a href="/servicios/rotulacion.html">Rotulación</a></li>
-          <li><a href="/servicios/diseno-grafico.html">Diseño gráfico</a></li>
-          <li><a href="/servicios/grabado-laser.html">Grabado láser</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-heading">Ubicaciones</p>
-        <ul class="footer-list">
-          <li><a href="/ubicaciones/atascadero.html">Atascadero</a></li>
-          <li><a href="/ubicaciones/paso-robles.html">Paso Robles</a></li>
-          <li><a href="/ubicaciones/nipomo.html">Nipomo</a></li>
-          <li><a href="/ubicaciones/lompoc.html">Lompoc</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-heading">Síguenos</p>
-        <ul class="footer-list">
-          <li><a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a></li>
-          <li><a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a></li>
-          <li><a href="https://google.com" target="_blank" rel="noreferrer">Google</a></li>
-        </ul>
+      <div class="footer-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#trabajos">Trabajos</a>
+        <a href="#contacto">Contacto</a>
       </div>
     </div>
-    <div class="container footer-bottom">
-      <p>© <span id="year"></span> Customize It. Todos los derechos reservados.</p>
-    </div>
+    <p class="footer-bottom">© 2025 Customize It. Todos los derechos reservados.</p>
   </footer>
-
-  <script src="/assets/js/main.js" defer></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
