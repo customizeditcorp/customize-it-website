@@ -443,3 +443,127 @@ footer .copyright {
     height: 220px;
   }
 }
+
+/* Shared service page styles */
+.service-hero {
+  min-height: 70vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--blanco);
+  padding: 2rem;
+}
+
+.service-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.45));
+}
+
+.service-hero .content {
+  position: relative;
+  max-width: 720px;
+}
+
+.service-hero h1 {
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  margin-bottom: 0.5rem;
+}
+
+.service-hero p {
+  font-size: 1.2rem;
+}
+
+.service-section {
+  padding: 4.5rem 2rem;
+  background: var(--blanco);
+}
+
+.service-section.light {
+  background: var(--gris-claro);
+}
+
+.service-section.orange {
+  background: var(--naranja);
+  color: var(--blanco);
+}
+
+.service-section .inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-section h2 {
+  font-size: 2.3rem;
+  color: var(--negro);
+  margin-bottom: 1.25rem;
+}
+
+.service-section.orange h2,
+.service-section.orange p {
+  color: var(--blanco);
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.service-section ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-section li {
+  margin-bottom: 0.5rem;
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.service-list .item {
+  padding: 1.25rem 1.5rem;
+  border-radius: 14px;
+  background: var(--blanco);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.service-section.orange .service-list .item {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+}
+
+.service-cta {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--negro);
+  color: var(--blanco);
+}
+
+.service-cta h2 {
+  color: var(--blanco);
+  margin-bottom: 1rem;
+}
+
+.service-cta .btn {
+  background: var(--naranja);
+  color: var(--blanco);
+}
+
+.media-block {
+  min-height: 320px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+}
