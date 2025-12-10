@@ -3,245 +3,210 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Customize It ayuda a negocios en Santa Maria, CA a proyectar una imagen profesional con uniformes, rotulación y diseño gráfico." />
+  <meta name="description" content="Customize It ofrece uniformes, rotulación y diseño gráfico para negocios en Santa Maria, CA." />
   <title>Customize It | Uniformes y Rotulación en Santa Maria, CA</title>
   <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="icon" href="/assets/images/logos/customize_it_logo_web-08.png" type="image/png" />
   <script src="https://static.elfsight.com/platform/platform.js" async></script>
 </head>
 <body>
   <header>
     <div class="container navbar">
-      <div class="navbar__logo">
-        <img src="/assets/images/logos/customize_it_logo_web-04.png" alt="Customize It Logo" />
-        <span class="navbar__brand">Customize&nbsp;It!</span>
-      </div>
-      <button class="mobile-toggle" data-nav-toggle aria-label="Menu" aria-expanded="false">
+      <a class="navbar__brand" href="/">
+        <img src="/assets/images/logos/customize_it_logo_web-04.png" alt="Customize It" />
+      </a>
+      <button class="navbar__toggle" aria-label="Abrir menú" aria-expanded="false" data-toggle-nav>
         ☰
       </button>
       <nav>
-        <ul class="navbar__menu" data-nav-menu>
-          <li><a href="#hero">Inicio</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#testimonios">Testimonios</a></li>
-          <li><a href="#cta">Cotiza</a></li>
+        <ul class="navbar__menu" data-menu>
+          <li><a href="#servicios">Servicios ▾</a></li>
+          <li><a href="#ubicaciones">Ubicaciones ▾</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
+      <div class="navbar__cta" data-menu-cta>
+        <a class="btn btn-primary" href="#cta">Cotización</a>
+      </div>
     </div>
   </header>
 
   <main>
-    <section id="hero" class="hero">
+    <section class="hero" id="hero">
       <div class="container hero__grid">
-        <div class="hero__content">
-          <p class="section__eyebrow">Rotulismo mexicano contemporáneo</p>
-          <h1 class="titulo-hero">Uniformes, Rotulación y Diseño Gráfico en Santa Maria, CA</h1>
-          <p><strong>Proyecta una imagen profesional desde que llegas a dar estimados.</strong></p>
-          <ul class="hero__list">
-            <li>Deja de improvisar con playeras diferentes y trucks sin rotular</li>
-            <li>Atiende a tus clientes como empresa, no como improvisado</li>
-            <li>Todo en un solo lugar, sin vueltas innecesarias</li>
-          </ul>
-          <div class="speed-lines" aria-hidden="true">
-            <span></span>
-            <span></span>
-          </div>
-          <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <a class="btn btn-primario" href="#cta">Solicita tu cotización</a>
-            <a class="btn btn-secundario" href="#servicios">Ver servicios</a>
-          </div>
-        </div>
-        <div class="hero__visual">
-          <div class="hero__image-placeholder">
-            HERO-HOME.JPG
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--clean" id="problemas">
-      <div class="container split-layout">
         <div>
-          <p class="section__eyebrow">Fondo limpio</p>
-          <h2 class="titulo-rotulo">¿Tu negocio se ve tan profesional como tu trabajo?</h2>
-          <p>Muchos dueños de servicios como tú tienen este problema:</p>
-          <ul>
-            <li>Tu equipo llega con uniformes distintos o sin logo</li>
-            <li>Tu camioneta sigue sin rotulación</li>
-            <li>Tus tarjetas no reflejan lo bien que trabajas</li>
-          </ul>
-          <p>La primera impresión cuenta más de lo que imaginas. Tus clientes deciden si confiar en ti en los primeros 10 segundos.</p>
+          <p class="hero__eyebrow">Customize It • Santa Maria, CA</p>
+          <h1>Uniformes, Rotulación y Diseño Gráfico</h1>
+          <p class="hero__subtitle">Proyecta una imagen profesional desde que llegas a dar estimados.</p>
+          <div class="hero__checks">
+            <div class="hero__check"><span>✓</span> Deja de improvisar con playeras diferentes y trucks sin rotular</div>
+            <div class="hero__check"><span>✓</span> Atiende a tus clientes como empresa, no como improvisado</div>
+            <div class="hero__check"><span>✓</span> Todo en un solo lugar, sin vueltas innecesarias</div>
+          </div>
+          <a class="btn btn-primary" href="#cta">Solicita tu cotización</a>
         </div>
-        <div class="image-placeholder" aria-label="Placeholder: problema-imagen.jpg">
-          PROBLEMA-IMAGEN.JPG
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--vibrant" id="visualizacion">
-      <div class="container split-layout">
-        <div>
-          <p class="section__eyebrow">Fondo vibrante</p>
-          <h2 class="titulo-rotulo-dual">Así es como podría verse tu negocio</h2>
-          <p>Imagina llegar a un nuevo cliente y que vea:</p>
-          <ul>
-            <li>Una camioneta rotulada que dice "empresa seria"</li>
-            <li>Un equipo uniforme, con logo y buena presencia</li>
-            <li>Una tarjeta con código QR que lleva a tus redes o tu página web</li>
-          </ul>
-          <p>Eso inspira confianza desde el principio. Y eso es lo que hace que te elijan a ti, no al más barato.</p>
-        </div>
-        <div class="image-placeholder image-placeholder--tall" aria-label="Placeholder: visualizacion-profesional.jpg">
-          VISUALIZACION-PROFESIONAL.JPG
+        <div class="placeholder-block" aria-label="Placeholder: Truck rotulada o equipo uniformado">
+          HERO IMAGE
         </div>
       </div>
     </section>
 
-    <section class="section section--muted" id="servicios">
+    <section class="section-muted" id="problemas">
       <div class="container">
-        <p class="section__eyebrow">Sistema llega con confianza</p>
-        <h2>Dale forma profesional a tu imagen en un solo lugar</h2>
-        <p>En Customize It creamos el sistema "Llega con Confianza". Pensado para dueños ocupados como tú:</p>
-        <div class="grid-cards">
-          <article class="card">
+        <h2>¿Tu negocio se ve tan profesional como tu trabajo?</h2>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>👕 Uniformes inconsistentes</h3>
+            <p>Tu equipo llega con ropa distinta o sin logo.</p>
+          </article>
+          <article class="feature-card">
+            <h3>🚐 Truck sin rotular</h3>
+            <p>Tu camioneta sigue en blanco, sin presencia.</p>
+          </article>
+          <article class="feature-card">
+            <h3>📋 Imagen amateur</h3>
+            <p>Tus tarjetas no reflejan lo bien que trabajas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="container">
+        <h2>Dale forma profesional a tu imagen</h2>
+        <p>Soluciones integrales para que llegues con confianza a cada cliente.</p>
+        <div class="services-grid">
+          <article class="service-card">
             <h3>Uniformes personalizados</h3>
-            <p>Prendas pensadas para uso rudo con tu logo bordado o impreso.</p>
-            <div class="image-placeholder" aria-label="Placeholder: servicios-grid/uniformes.jpg">
-              UNIFORMES.JPG
-            </div>
+            <p>Prendas que aguantan el trabajo diario con tu logo bordado o estampado.</p>
+            <a href="/servicios/uniformes.html">Ver más →</a>
           </article>
-          <article class="card card--vibrant">
+          <article class="service-card">
             <h3>Rotulación vehicular</h3>
-            <p>Desde magnets hasta full wrap para que tu truck hable por ti.</p>
-            <div class="image-placeholder" aria-label="Placeholder: servicios-grid/rotulacion.jpg">
-              ROTULACION.JPG
-            </div>
+            <p>Convierte tu truck en un anuncio rodante que genera confianza.</p>
+            <a href="/servicios/rotulacion.html">Ver más →</a>
           </article>
-          <article class="card">
+          <article class="service-card">
             <h3>Diseño gráfico</h3>
-            <p>Logos y artes coherentes para tarjetas, redes y promociones.</p>
-            <div class="image-placeholder" aria-label="Placeholder: servicios-grid/diseno.jpg">
-              DISENO.JPG
-            </div>
+            <p>Logos y artes que representan tu negocio profesionalmente.</p>
+            <a href="/servicios/diseno-grafico.html">Ver más →</a>
           </article>
-          <article class="card">
-            <h3>Tarjetas y QR</h3>
-            <p>Impresos premium que conectan tu presencia offline con la digital.</p>
-            <div class="image-placeholder" aria-label="Placeholder: servicios-grid/tarjetas.jpg">
-              TARJETAS.JPG
-            </div>
+          <article class="service-card">
+            <h3>Grabado láser</h3>
+            <p>Personalización de alta precisión en metal, madera, vidrio y más.</p>
+            <a href="/servicios/grabado-laser.html">Ver más →</a>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section--clean" id="diferenciadores">
-      <div class="container split-layout">
-        <div>
-          <p class="section__eyebrow">Local + experto</p>
-          <h2>Sabemos lo que necesitas: claridad, calidad y seguimiento</h2>
-          <ul>
-            <li>Te explicamos todo antes de imprimir o rotular</li>
-            <li>Te damos opciones según tu presupuesto</li>
-            <li>Mantenemos tu imagen coherente cuando regreses por más</li>
-          </ul>
-          <p>Somos un taller local, con showroom y más de 20 años de experiencia. Te entendemos y te hablamos claro.</p>
-        </div>
-        <div class="image-placeholder" aria-label="Placeholder: showroom-taller.jpg">
-          SHOWROOM-TALLER.JPG
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--vibrant section--pattern" id="testimonios">
+    <section class="section-muted" id="por-que">
       <div class="container">
-        <p class="section__eyebrow">Clientes reales</p>
+        <h2>Sabemos lo que necesitas</h2>
+        <div class="benefit-list">
+          <div class="benefit-item"><span>✓</span> Más de 20 años de experiencia</div>
+          <div class="benefit-item"><span>✓</span> Atención en español, sin tecnicismos</div>
+          <div class="benefit-item"><span>✓</span> Showroom local en Santa Maria</div>
+          <div class="benefit-item"><span>✓</span> Pruebas visuales antes de producir</div>
+          <div class="benefit-item"><span>✓</span> Reordenes fáciles: todo queda guardado</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proceso">
+      <div class="container">
+        <h2>Así trabajamos contigo</h2>
+        <div class="process-steps">
+          <div class="process-step">
+            <strong>1. Escríbenos</strong>
+            <p>Por WhatsApp o email.</p>
+          </div>
+          <div class="process-step">
+            <strong>2. Manda fotos</strong>
+            <p>De tu truck o equipo actual.</p>
+          </div>
+          <div class="process-step">
+            <strong>3. Recibe opciones</strong>
+            <p>Según tu presupuesto.</p>
+          </div>
+          <div class="process-step">
+            <strong>4. Producción</strong>
+            <p>Local y con calidad.</p>
+          </div>
+          <div class="process-step">
+            <strong>5. Entrega</strong>
+            <p>En taller o a domicilio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-muted" id="testimonios">
+      <div class="container">
         <h2>Clientes que ya llegan con confianza</h2>
-        <div class="grid-cards">
-          <article class="card">
-            <p class="testimonial">"Ahora mis clientes me ven diferente desde que llego. La camioneta y los uniformes hacen toda la diferencia."</p>
-            <p><strong>José R.</strong>, contratista en Santa Maria</p>
+        <div class="elfsight-app-966e4656-3383-4ed3-89c6-45bc36dffdbe" data-elfsight-app-lazy></div>
+        <div class="testimonials">
+          <article class="testimonial-card">
+            <p>“Ahora mis clientes me ven diferente desde que llego. La camioneta y los uniformes hacen toda la diferencia.”</p>
+            <p><strong>José R.</strong> · Contratista, Santa Maria</p>
           </article>
-          <article class="card">
-            <p class="testimonial">"Me explicaron todo paso a paso. No solo me dieron uniformes, me ayudaron a verme como empresa."</p>
-            <p><strong>Pedro C.</strong>, jardinería y limpieza</p>
+          <article class="testimonial-card">
+            <p>“Me explicaron todo paso a paso. No solo me dieron uniformes, me ayudaron a verme como empresa.”</p>
+            <p><strong>Pedro C.</strong> · Jardinería y limpieza</p>
           </article>
-        </div>
-        <div style="margin-top: 2rem;">
-          <div class="badge">Widget de reviews Elfsight</div>
-          <div class="elfsight-app-966e4656-3383-4ed3-89c6-45bc36dffdbe" data-elfsight-app-lazy></div>
-        </div>
-        <div class="grid-cards" style="margin-top: 2rem;">
-          <div class="image-placeholder" aria-label="Placeholder: clientes-galeria/cliente-truck-1.jpg">CLIENTE-TRUCK-1.JPG</div>
-          <div class="image-placeholder" aria-label="Placeholder: clientes-galeria/cliente-equipo-1.jpg">CLIENTE-EQUIPO-1.JPG</div>
-          <div class="image-placeholder" aria-label="Placeholder: clientes-galeria/cliente-antes-despues.jpg">ANTES-DESPUES.JPG</div>
-          <div class="image-placeholder" aria-label="Placeholder: clientes-galeria/cliente-trabajo.jpg">CLIENTE-TRABAJO.JPG</div>
         </div>
       </div>
     </section>
 
-    <section class="section section--clean" id="cta">
-      <div class="container split-layout">
-        <div>
-          <p class="section__eyebrow">CTA final</p>
-          <h2 class="titulo-rotulo">¿Listo para dejar de improvisar?</h2>
-          <ol>
-            <li>Escríbenos por WhatsApp o email</li>
-            <li>Manda fotos de tu truck o uniforme actual</li>
-            <li>Te damos opciones según tu trabajo y presupuesto</li>
-          </ol>
-          <a class="btn btn-primario" href="mailto:luis@customizeitca.com">Quiero cotización personalizada</a>
-        </div>
-        <div class="image-placeholder" aria-label="Placeholder: mapa-local.jpg">
-          MAPA-LOCAL.JPG
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--clean" id="contacto">
+    <section id="cta">
       <div class="container">
-        <p class="section__eyebrow">Contacto directo</p>
-        <h2>Customize It</h2>
-        <p>134 B Inger Dr, Santa Maria, CA 93454</p>
-        <p><strong>Tel:</strong> <a href="tel:+18056310949">(805) 631-0949</a></p>
-        <p><strong>Email:</strong> <a href="mailto:luis@customizeitca.com">luis@customizeitca.com</a></p>
-        <p><strong>Horario:</strong> Lunes a viernes, 9am – 6pm</p>
+        <div class="cta-dark">
+          <h2>¿Listo para dejar de improvisar?</h2>
+          <p>Escríbenos hoy y recibe opciones según tu trabajo y presupuesto.</p>
+          <a class="btn btn-primary" href="mailto:luis@customizeitca.com">Quiero cotización personalizada</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer id="contacto">
     <div class="container footer__grid">
       <div class="footer__logo">
-        <img src="/assets/images/logos/customize_it_logo_web_Mesa_de_trabajo_1.png" alt="Customize It vertical logo" />
+        <img src="/assets/images/logos/customize_it_logo_web-05.png" alt="Customize It logo blanco" />
+        <p>134 B Inger Dr, Santa Maria, CA 93454<br />
+        (805) 631-0949<br />
+        luis@customizeitca.com<br />
+        Lunes a viernes, 9am – 6pm</p>
       </div>
       <div>
-        <h3>Explora</h3>
+        <p class="footer__heading">Servicios</p>
         <ul class="footer__list">
-          <li><a href="#hero">Inicio</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#testimonios">Testimonios</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Servicios destacados</h3>
-        <ul class="footer__list">
-          <li><a href="/servicios/uniformes.html">Uniformes personalizados</a></li>
-          <li><a href="/servicios/rotulacion.html">Rotulación vehicular</a></li>
+          <li><a href="/servicios/uniformes.html">Uniformes</a></li>
+          <li><a href="/servicios/rotulacion.html">Rotulación</a></li>
           <li><a href="/servicios/diseno-grafico.html">Diseño gráfico</a></li>
+          <li><a href="/servicios/grabado-laser.html">Grabado láser</a></li>
+        </ul>
+      </div>
+      <div id="ubicaciones">
+        <p class="footer__heading">Ubicaciones</p>
+        <ul class="footer__list">
+          <li><a href="/ubicaciones/atascadero.html">Atascadero</a></li>
+          <li><a href="/ubicaciones/paso-robles.html">Paso Robles</a></li>
+          <li><a href="/ubicaciones/nipomo.html">Nipomo</a></li>
+          <li><a href="/ubicaciones/lompoc.html">Lompoc</a></li>
         </ul>
       </div>
       <div>
-        <h3>Contáctanos</h3>
+        <p class="footer__heading">Síguenos</p>
         <ul class="footer__list">
-          <li>Tel: (805) 631-0949</li>
-          <li>Email: luis@customizeitca.com</li>
-          <li>Santa Maria, CA</li>
+          <li><a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a></li>
+          <li><a href="https://google.com" target="_blank" rel="noreferrer">Google</a></li>
         </ul>
       </div>
     </div>
     <div class="container footer__bottom">
-      <p>© <span id="year"></span> Customize It. "Como te ven, te tratan".</p>
+      <p>© <span id="year"></span> Customize It. Todos los derechos reservados.</p>
     </div>
   </footer>
 
