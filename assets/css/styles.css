@@ -3,37 +3,7 @@
  * Visual system inspired by Printey template
  */
 
-@font-face {
-  font-family: 'Gotham';
-  src: url('/assets/fonts/Gotham-Book.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Gotham';
-  src: url('/assets/fonts/Gotham-Medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Gotham';
-  src: url('/assets/fonts/Gotham-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Gotham';
-  src: url('/assets/fonts/Gotham-Black.otf') format('opentype');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap');
 
 :root {
   --naranja: #ff3b15;
@@ -55,7 +25,7 @@
 
 body {
   margin: 0;
-  font-family: 'Gotham', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--gris-oscuro);
   background: var(--blanco);
   line-height: 1.6;
