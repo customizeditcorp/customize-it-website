@@ -544,20 +544,89 @@ footer .copyright {
   box-shadow: none;
 }
 
-.service-cta {
-  text-align: center;
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.process-step {
+  background: var(--blanco);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.process-step .number {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--naranja);
+}
+
+.testimonials-widget {
   padding: 4rem 2rem;
-  background: var(--negro);
+  background: var(--blanco);
+}
+
+.related-services {
+  padding: 4rem 2rem;
+  background: var(--gris-claro);
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.related-card {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  height: 260px;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
   color: var(--blanco);
 }
 
+.related-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+  transition: background 0.3s ease;
+}
+
+.related-card:hover::before {
+  background: rgba(255, 87, 51, 0.85);
+}
+
+.related-card span {
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.service-cta {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #ffba00;
+  color: var(--negro);
+}
+
 .service-cta h2 {
-  color: var(--blanco);
+  color: var(--negro);
   margin-bottom: 1rem;
 }
 
 .service-cta .btn {
-  background: var(--naranja);
+  background: var(--negro);
   color: var(--blanco);
 }
 
