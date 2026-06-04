@@ -1,3 +1,33 @@
+/* Gotham — brand font */
+@font-face {
+  font-family: 'Gotham';
+  src: url('/assets/fonts/Gotham-Book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('/assets/fonts/Gotham-BookItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('/assets/fonts/Gotham-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('/assets/fonts/Gotham-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+/* Montserrat fallback via Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap');
 
 :root {
@@ -15,7 +45,7 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Gotham', 'Montserrat', sans-serif;
   color: var(--texto);
   background: var(--blanco);
   line-height: 1.6;
@@ -146,7 +176,7 @@ header {
 .hero {
   height: calc(100vh - 90px);
   background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1920&auto=format&fit=crop&q=80') center/cover no-repeat;
+    url('/assets/images/hero-bg.png') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -221,7 +251,7 @@ header {
 .problemas .imagen {
   min-height: 320px;
   border-radius: 20px;
-  background: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&auto=format&fit=crop&q=80') center/cover no-repeat;
+  background: url('/assets/images/us.png') center/cover no-repeat;
 }
 
 /* Visualización */
