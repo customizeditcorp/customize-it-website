@@ -11,54 +11,35 @@
   <style>
     .contact-page { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
     .contact-page h1 { font-size: 2rem; color: var(--negro); margin-bottom: 0.5rem; }
-    .contact-page .subtitle { color: #666; margin-bottom: 2.5rem; font-size: 1.05rem; }
-    .form-group { margin-bottom: 1.25rem; }
-    .form-group label { display: block; font-weight: 600; color: var(--negro); margin-bottom: 0.4rem; font-size: 0.95rem; }
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #ddd; border-radius: 10px;
-      font-size: 0.95rem; font-family: inherit; background: #fff; transition: border-color 0.2s;
-      box-sizing: border-box;
+    .contact-page .subtitle { color: #666; margin-bottom: 2.5rem; font-size: 1.05rem; line-height: 1.7; }
+
+    .contact-methods { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
+    .contact-card {
+      background: #fff; border-radius: 16px; padding: 1.75rem 1.5rem;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08); text-align: center;
+      text-decoration: none; color: var(--negro);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
     }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-      outline: none; border-color: var(--naranja);
+    .contact-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+    .contact-card .icon { font-size: 2rem; }
+    .contact-card strong { font-size: 1rem; color: var(--negro); }
+    .contact-card span { font-size: 0.9rem; color: #666; }
+
+    .chat-cta-box {
+      background: var(--gris-claro); border-radius: 20px;
+      padding: 2rem; text-align: center; margin-bottom: 2.5rem;
     }
-    .form-group textarea { resize: vertical; min-height: 100px; }
-    .sms-consent-block {
-      background: #f8f9fa;
-      border: 1.5px solid #e0e0e0;
-      border-radius: 12px;
-      padding: 1.25rem 1.5rem;
-      margin: 1.5rem 0;
+    .chat-cta-box h2 { font-size: 1.4rem; color: var(--negro); margin-bottom: 0.75rem; }
+    .chat-cta-box p { color: #555; font-size: 0.97rem; line-height: 1.7; margin-bottom: 0; }
+    .chat-cta-box .arrow { font-size: 2rem; margin: 0.75rem 0 0; display: block; }
+
+    .hours-box {
+      background: #fff; border-radius: 16px; padding: 1.5rem 2rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07); margin-top: 2rem;
     }
-    .sms-consent-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-    }
-    .sms-consent-row input[type="checkbox"] {
-      width: 18px; height: 18px; min-width: 18px;
-      margin-top: 2px; cursor: pointer; accent-color: var(--naranja);
-    }
-    .sms-consent-label {
-      font-size: 0.88rem;
-      color: #444;
-      line-height: 1.6;
-    }
-    .sms-consent-label strong { color: var(--negro); }
-    .sms-consent-label a { color: var(--naranja); }
-    .optional-tag { font-size: 0.8rem; color: #888; font-weight: 400; }
-    .submit-btn {
-      width: 100%; padding: 1rem; background: var(--naranja); color: #fff;
-      border: none; border-radius: 12px; font-size: 1.05rem; font-weight: 700;
-      cursor: pointer; transition: opacity 0.2s; margin-top: 0.5rem;
-    }
-    .submit-btn:hover { opacity: 0.9; }
-    .contact-alt { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid #eee; text-align: center; }
-    .contact-alt p { color: #666; margin-bottom: 1rem; }
-    .contact-alt-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-    .success-msg { display: none; background: #e8f5e9; border: 1px solid #a5d6a7; border-radius: 10px; padding: 1rem 1.5rem; margin-top: 1rem; color: #2e7d32; font-weight: 600; }
-    /* Honeypot — hidden from users, visible to bots */
-    .hp-field { display: none !important; position: absolute; left: -9999px; }
+    .hours-box h3 { font-size: 1rem; color: var(--negro); margin-bottom: 0.75rem; }
+    .hours-box p { color: #555; font-size: 0.95rem; margin: 0.3rem 0; }
   </style>
 </head>
 <body>
@@ -86,70 +67,44 @@
   <main>
     <div class="contact-page">
       <h1>Solicitar Cotización Gratis</h1>
-      <p class="subtitle">Cuéntanos qué necesitas y te respondemos en menos de 24 horas. Sin compromiso.</p>
+      <p class="subtitle">Cuéntanos qué necesitas y te respondemos en menos de 24 horas. Sin compromiso.<br/>Usa el chat en la esquina inferior derecha o contáctanos directamente.</p>
 
-      <form id="contactForm" novalidate>
+      <!-- Chat widget call-to-action -->
+      <div class="chat-cta-box">
+        <h2>💬 Escríbenos por el chat</h2>
+        <p>El botón de chat en la esquina inferior derecha de esta página es la manera más rápida de solicitar cotización. Responde durante horario de oficina y a veces después también.</p>
+        <span class="arrow">↘</span>
+      </div>
 
-        <!-- Honeypot — spam protection, hidden from real users -->
-        <div class="hp-field" aria-hidden="true">
-          <label for="website_url">Website (leave blank)</label>
-          <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off" />
-        </div>
+      <!-- Direct contact alternatives -->
+      <div class="contact-methods">
+        <a class="contact-card" href="tel:+18053452773">
+          <span class="icon">📞</span>
+          <strong>Llamar</strong>
+          <span>(805) 345-2773</span>
+        </a>
+        <a class="contact-card" href="https://wa.me/18053452773?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20gratis" target="_blank" rel="noopener">
+          <span class="icon">💬</span>
+          <strong>WhatsApp</strong>
+          <span>Enviar mensaje</span>
+        </a>
+        <a class="contact-card" href="mailto:info@customizeitca.com">
+          <span class="icon">✉️</span>
+          <strong>Email</strong>
+          <span>info@customizeitca.com</span>
+        </a>
+        <a class="contact-card" href="https://maps.google.com/?q=134+Inger+Dr+Santa+Maria+CA+93454" target="_blank" rel="noopener">
+          <span class="icon">📍</span>
+          <strong>Visítanos</strong>
+          <span>134 Inger Dr, Santa Maria</span>
+        </a>
+      </div>
 
-        <div class="form-group">
-          <label for="fullName">Nombre completo *</label>
-          <input type="text" id="fullName" name="fullName" placeholder="Tu nombre" required autocomplete="name" />
-        </div>
-
-        <div class="form-group">
-          <label for="phone">Teléfono *</label>
-          <input type="tel" id="phone" name="phone" placeholder="(805) 000-0000" required autocomplete="tel" />
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="tu@email.com" autocomplete="email" />
-        </div>
-
-        <div class="form-group">
-          <label for="service">Servicio de interés</label>
-          <select id="service" name="service">
-            <option value="">— Seleccionar —</option>
-            <option value="vehicle-wraps">Vehicle Wraps / Rotulación</option>
-            <option value="uniformes">Uniformes Personalizados</option>
-            <option value="diseno-grafico">Diseño Gráfico / Logo</option>
-            <option value="grabado-laser">Grabado Láser</option>
-            <option value="multiple">Varios servicios</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="message">Cuéntanos más</label>
-          <textarea id="message" name="message" placeholder="¿Qué necesitas? Número de vehículos, prendas, tipo de proyecto…"></textarea>
-        </div>
-
-        <!-- SMS Opt-In — A2P 10DLC compliant, unchecked by default, optional -->
-        <div class="sms-consent-block">
-          <div class="sms-consent-row">
-            <input type="checkbox" id="smsConsent" name="smsConsent" value="yes" />
-            <label class="sms-consent-label" for="smsConsent">
-              <strong>Recibir actualizaciones por SMS <span class="optional-tag">(Opcional)</span></strong><br/>
-              Al marcar esta casilla, autorizo a <strong>Customize It (L &amp; M Creative Service INC)</strong> a enviarme mensajes de texto con actualizaciones sobre mi cotización, recordatorios de cita y ofertas ocasionales. La frecuencia de mensajes puede variar. Pueden aplicar tarifas de mensajes y datos. Responde <strong>STOP</strong> para cancelar. Responde <strong>HELP</strong> para ayuda. Ver <a href="/privacy-policy/" target="_blank">Política de Privacidad</a> y <a href="/sms-terms/" target="_blank">Términos de SMS</a>. Tu consentimiento no es condición para recibir servicios.
-            </label>
-          </div>
-        </div>
-
-        <button type="submit" class="submit-btn">Enviar solicitud →</button>
-        <div id="successMsg" class="success-msg">✅ ¡Gracias! Te contactaremos en menos de 24 horas.</div>
-      </form>
-
-      <div class="contact-alt">
-        <p>¿Prefieres contacto directo?</p>
-        <div class="contact-alt-links">
-          <a class="btn" href="tel:+18053452773" style="background:var(--naranja);color:#fff;">📞 (805) 345-2773</a>
-          <a class="btn" href="https://wa.me/18053452773?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener" style="background:#25d366;color:#fff;">💬 WhatsApp</a>
-          <a class="btn" href="mailto:info@customizeitca.com" style="background:var(--negro);color:#fff;">✉️ Email</a>
-        </div>
+      <div class="hours-box">
+        <h3>⏰ Horario de atención</h3>
+        <p>Lunes – Viernes: 9am – 5pm</p>
+        <p>Sábado y Domingo: Cerrado</p>
+        <p style="margin-top:0.75rem; font-size:0.88rem; color:#888;">Los mensajes recibidos fuera de horario serán contestados el siguiente día hábil.</p>
       </div>
     </div>
   </main>
@@ -187,41 +142,6 @@
     <p class="copyright">© 2026 Customize It | L &amp; M Creative Service INC. Todos los derechos reservados. | 134 Inger Dr, Santa Maria, CA 93454 | (805) 345-2773</p>
   </footer>
 
-  <script>
-    document.getElementById('contactForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-
-      // Block bots that fill honeypot
-      if (document.getElementById('website_url').value) return;
-
-      const payload = {
-        fullName: document.getElementById('fullName').value,
-        phone: document.getElementById('phone').value,
-        email: document.getElementById('email').value,
-        service: document.getElementById('service').value,
-        message: document.getElementById('message').value,
-        smsConsent: document.getElementById('smsConsent').checked,
-      };
-
-      // GHL webhook — replace URL with your actual GHL webhook endpoint
-      const GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/YOUR_WEBHOOK_ID/webhook-trigger/YOUR_TRIGGER_ID';
-
-      try {
-        await fetch(GHL_WEBHOOK, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
-      } catch (err) {
-        // Fail silently — show success anyway to avoid leaking config
-        console.error('Webhook error:', err);
-      }
-
-      document.getElementById('successMsg').style.display = 'block';
-      document.getElementById('contactForm').reset();
-      window.scrollTo({ top: document.getElementById('successMsg').offsetTop - 40, behavior: 'smooth' });
-    });
-  </script>
-
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69f39b4c4a590d25edfdaec3" data-source="WEB_USER"></script>
 </body>
 </html>
