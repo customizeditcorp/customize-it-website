@@ -1,4 +1,7 @@
-/* Gotham — brand font */
+/* Inter — primary web font (Task 7) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+
+/* Gotham — brand font (local fallback) */
 @font-face {
   font-family: 'Gotham';
   src: url('/assets/fonts/Gotham-Book.otf') format('opentype');
@@ -45,7 +48,7 @@
 }
 
 body {
-  font-family: 'Gotham', 'Montserrat', sans-serif;
+  font-family: 'Inter', 'Gotham', system-ui, sans-serif;
   color: var(--texto);
   background: var(--blanco);
   line-height: 1.6;
