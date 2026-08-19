@@ -76,6 +76,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.customizeitca.com/ubicaciones/san-luis-obispo.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.customizeitca.com/ubicaciones/pismo-beach.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- Legal pages — required for A2P 10DLC TCR -->
   <url>
