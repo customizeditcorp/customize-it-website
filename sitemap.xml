@@ -99,4 +99,21 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Blog -->
+  <url>
+    <loc>https://www.customizeitca.com/blog/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.customizeitca.com/blog/how-much-does-a-vehicle-wrap-cost.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.customizeitca.com/blog/commercial-truck-wraps-central-coast-california.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
