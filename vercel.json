@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/servicios/rotulacion.html",
+      "destination": "/servicios/vehicle-wraps.html",
+      "permanent": true
+    }
+  ]
+}
