@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Galería de Trabajos — Customize It</title>
+<link rel="icon" href="/assets/images/logos/customize_it_logo_web-08.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+/* ── Design tokens (mirrors the main site) ─────────────────── */
+:root {
+  --naranja: #ff5733;
+  --naranja-dk: #d94420;
+  --negro: #1a1a1a;
+  --texto: #4a4a4a;
+  --muted: #888;
+  --blanco: #fff;
+  --gris: #f5f5f5;
+  --border: #e5e5e5;
+  --radius: 14px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { font-family: 'Inter', system-ui, sans-serif; color: var(--texto); background: var(--blanco); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+/* ── Header ────────────────────────────────────────────────── */
+header {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--blanco);
+  box-shadow: 0 1px 0 var(--border);
+}
+.hdr {
+  max-width: 960px; margin: 0 auto;
+  padding: 10px 16px;
+  display: flex; align-items: center; gap: 12px;
+}
+.hdr-logo { height: 40px; width: auto; }
+.lang {
+  margin-left: auto;
+  display: flex; border: 1.5px solid var(--border); border-radius: 999px; overflow: hidden;
+}
+.lang button {
+  background: none; border: none;
+  color: var(--muted); font: 600 .75rem 'Inter',sans-serif;
+  padding: 5px 11px; cursor: pointer; transition: background .15s, color .15s;
+}
+.lang button.on { background: var(--negro); color: var(--blanco); }
+.hdr-cta {
+  background: var(--naranja); color: var(--blanco);
+  font: 600 .85rem 'Inter',sans-serif;
+  padding: 9px 18px; border-radius: 999px;
+  white-space: nowrap; transition: background .2s, transform .2s;
+}
+.hdr-cta:hover { background: var(--naranja-dk); transform: translateY(-1px); }
+
+/* ── Hero ──────────────────────────────────────────────────── */
+.hero {
+  background: linear-gradient(135deg, var(--negro) 0%, #2a1a15 100%);
+  color: var(--blanco);
+  padding: 44px 16px 36px;
+  text-align: center;
+}
+.hero .eyebrow {
+  font: 600 .72rem 'Inter',sans-serif;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: var(--naranja); margin-bottom: 10px;
+}
+.hero h1 {
+  font-size: clamp(1.85rem, 6vw, 2.9rem);
+  font-weight: 900; line-height: 1.08;
+  margin-bottom: 10px;
+}
+.hero h1 span { color: var(--naranja); }
+.hero p { color: #aaa; max-width: 520px; margin: 0 auto; font-size: .95rem; }
+
+/* ── Section wrapper ───────────────────────────────────────── */
+.seccion { padding: 36px 0 10px; }
+.seccion:nth-child(even) { background: var(--gris); }
+.sec-head { max-width: 960px; margin: 0 auto; padding: 0 16px 14px; }
+.sec-head h2 {
+  font-size: clamp(1.4rem, 5vw, 1.9rem);
+  font-weight: 900; color: var(--negro); line-height: 1.1;
+}
+.sec-head .sub { color: var(--muted); font-size: .88rem; margin-top: 4px; }
+.chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.chip {
+  font: 600 .82rem 'Inter',sans-serif;
+  padding: 5px 12px; border-radius: 8px;
+  border: 1.5px solid var(--border); color: var(--texto);
+  background: var(--blanco);
+}
+.chip.price {
+  background: var(--naranja); color: var(--blanco);
+  border-color: var(--naranja);
+}
+.seccion:nth-child(even) .chip { background: var(--blanco); }
+.seccion:nth-child(even) .chip.price { background: var(--naranja); color: var(--blanco); border-color: var(--naranja); }
+
+/* ── Carousel strip ────────────────────────────────────────── */
+.strip {
+  display: flex; gap: 10px;
+  overflow-x: auto; padding: 4px 16px 20px;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.strip::-webkit-scrollbar { display: none; }
+.foto {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  border-radius: var(--radius); overflow: hidden;
+  position: relative; cursor: pointer;
+  border: 1.5px solid var(--border);
+  background: var(--gris);
+  border-top: 3px solid var(--naranja);
+  box-shadow: 0 4px 16px rgba(0,0,0,.06);
+  transition: transform .2s, box-shadow .2s;
+}
+.foto:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,.12); }
+.foto img {
+  height: 220px; width: auto; max-width: 82vw;
+  object-fit: cover; display: block;
+}
+@media (min-width: 640px) { .foto img { height: 280px; } }
+.foto .cap {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 28px 12px 10px;
+  background: linear-gradient(transparent, rgba(0,0,0,.78));
+  color: var(--blanco);
+  font: 700 .95rem 'Inter',sans-serif;
+  line-height: 1.2;
+}
+.foto .cap small {
+  display: block;
+  font-weight: 400; font-size: .76rem;
+  color: rgba(255,255,255,.8); margin-top: 2px;
+}
+.hint {
+  max-width: 960px; margin: 0 auto; padding: 0 16px 8px;
+  color: var(--muted); font: 500 .73rem 'Inter',sans-serif;
+  text-transform: uppercase; letter-spacing: .1em;
+}
+
+/* ── Testimonials ──────────────────────────────────────────── */
+.testi { background: var(--gris); padding: 40px 16px; }
+.testi-inner { max-width: 760px; margin: 0 auto; }
+.testi h2 { font-size: clamp(1.3rem,4vw,1.7rem); font-weight: 900; color: var(--negro); margin-bottom: 16px; }
+.vid {
+  aspect-ratio: 16/9; border-radius: var(--radius); overflow: hidden;
+  border: 1.5px solid var(--border); margin-bottom: 20px;
+}
+.vid iframe { width: 100%; height: 100%; border: 0; }
+.reviews-wrap { border-radius: var(--radius); overflow: hidden; }
+
+/* ── CTA final ─────────────────────────────────────────────── */
+.cta-final {
+  background: var(--naranja);
+  color: var(--blanco); text-align: center;
+  padding: 50px 16px 56px;
+}
+.cta-final h2 {
+  font-size: clamp(1.6rem, 6vw, 2.4rem);
+  font-weight: 900; line-height: 1.1; margin-bottom: 8px;
+}
+.cta-final p { opacity: .92; max-width: 440px; margin: 0 auto 22px; }
+.btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.btn-w {
+  background: var(--blanco); color: var(--negro);
+  font: 700 .95rem 'Inter',sans-serif;
+  padding: 13px 26px; border-radius: 999px;
+  transition: transform .2s;
+}
+.btn-w:hover { transform: translateY(-2px); }
+.btn-o {
+  border: 2px solid rgba(255,255,255,.85); color: var(--blanco);
+  font: 700 .95rem 'Inter',sans-serif;
+  padding: 11px 24px; border-radius: 999px;
+  transition: background .2s;
+}
+.btn-o:hover { background: rgba(255,255,255,.15); }
+
+/* ── Footer ────────────────────────────────────────────────── */
+footer {
+  padding: 18px 16px;
+  text-align: center; color: var(--muted); font-size: .78rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Lightbox ──────────────────────────────────────────────── */
+.lb {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,.96);
+  display: none; align-items: center; justify-content: center;
+  flex-direction: column;
+}
+.lb.open { display: flex; }
+.lb-img-wrap { position: relative; max-width: 100vw; max-height: 80vh; display: flex; align-items: center; justify-content: center; }
+.lb img {
+  max-width: 96vw; max-height: 78vh;
+  object-fit: contain; border-radius: 6px;
+  display: block;
+}
+.lb-count {
+  position: fixed; top: 14px; left: 0; right: 0;
+  text-align: center;
+  font: 600 .76rem 'Inter',sans-serif; color: rgba(255,255,255,.5);
+  letter-spacing: .1em;
+}
+.lb-x {
+  position: fixed; top: 8px; right: 12px;
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.08);
+  color: var(--blanco); font-size: 1.15rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background .2s;
+}
+.lb-x:hover { background: rgba(255,255,255,.18); }
+.lb-nav {
+  position: fixed; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.08);
+  color: var(--blanco); font-size: 1.25rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background .2s;
+}
+.lb-nav:hover { background: rgba(255,255,255,.2); }
+.lb-prev { left: 10px; }
+.lb-next { right: 10px; }
+@media (max-width: 600px) { .lb-nav { display: none; } }
+.lb-cap {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  padding: 16px; text-align: center;
+  color: var(--blanco); font: 700 1rem 'Inter',sans-serif;
+}
+.lb-cap small { display: block; color: rgba(255,255,255,.6); font-weight: 400; font-size: .8rem; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="hdr">
+    <a href="https://www.customizeitca.com/">
+      <img class="hdr-logo" src="/assets/images/logos/customize_it_logo_web-04.png" alt="Customize It">
+    </a>
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button id="b-es" class="on" onclick="setLang('es')">ES</button>
+      <button id="b-en" onclick="setLang('en')">EN</button>
+    </div>
+    <a class="hdr-cta" href="https://wa.me/18053452773?text=Hola%2C%20vi%20la%20galer%C3%ADa%20y%20quiero%20cotizar%20un%20wrap" data-i18n="cta_top">Cotizar</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow">Santa Maria, CA · Central Coast</div>
+  <h1 data-i18n="h1">Trabajos reales,<br><span>negocios reales</span></h1>
+  <p data-i18n="hero_p">Desliza y mira wraps instalados por nuestro equipo — con precios desde y tiempo de entrega estimado.</p>
+</section>
+
+<!-- DECALS -->
+<section class="seccion">
+  <div class="sec-head">
+    <h2>Decals &amp; Lettering</h2>
+    <div class="sub" data-i18n="s1">Logo y contacto en puertas y cajuela · cubre ~10–20% del vehículo</div>
+    <div class="chips">
+      <span class="chip price"><span data-i18n="from">desde</span> $450</span>
+      <span class="chip">⏱ <span data-i18n="d1">~2 días hábiles</span></span>
+    </div>
+  </div>
+  <div class="strip" id="strip-decal"></div>
+  <div class="hint" data-i18n="hint">← Desliza para ver más →</div>
+</section>
+
+<!-- PARTIAL WRAP -->
+<section class="seccion">
+  <div class="sec-head">
+    <h2>Partial Wrap</h2>
+    <div class="sub" data-i18n="s2">Diseño en secciones estratégicas · cubre ~40–75% · el favorito de los contratistas</div>
+    <div class="chips">
+      <span class="chip price"><span data-i18n="from">desde</span> $1,249</span>
+      <span class="chip">⏱ <span data-i18n="d2">~4 días hábiles</span></span>
+    </div>
+  </div>
+  <div class="strip" id="strip-partial"></div>
+  <div class="hint" data-i18n="hint">← Desliza para ver más →</div>
+</section>
+
+<!-- FULL WRAP -->
+<section class="seccion">
+  <div class="sec-head">
+    <h2>Full Wrap</h2>
+    <div class="sub" data-i18n="s3">El vehículo completo es tu anuncio · cobertura 100% · máxima presencia</div>
+    <div class="chips">
+      <span class="chip price"><span data-i18n="from">desde</span> $2,700</span>
+      <span class="chip">⏱ <span data-i18n="d3">~6 días hábiles</span></span>
+    </div>
+  </div>
+  <div class="strip" id="strip-full"></div>
+  <div class="hint" data-i18n="hint">← Desliza para ver más →</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi">
+  <div class="testi-inner">
+    <h2 data-i18n="ts_h">Lo que dicen nuestros clientes</h2>
+    <div class="vid">
+      <iframe src="https://www.youtube.com/embed/0necdQ-wcTo" title="Testimonial — Customize It" loading="lazy" allowfullscreen></iframe>
+    </div>
+    <div class="reviews-wrap">
+      <script type="text/javascript" src="https://reputationhub.site/reputation/assets/review-widget.js"></script>
+      <iframe class="lc_reviews_widget" src="https://reputationhub.site/reputation/widgets/review_widget/5qpjOZ0JlVDTi2MO6xuZ" frameborder="0" scrolling="no" style="min-width:100%;width:100%;border-radius:14px;"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <h2 data-i18n="cta_h">Tu troca puede ser la siguiente</h2>
+  <p data-i18n="cta_p">Mándanos fotos de tu vehículo y tu logo por WhatsApp — cotización gratis el mismo día.</p>
+  <div class="btns">
+    <a class="btn-w" href="https://wa.me/18053452773?text=Hola%2C%20vi%20la%20galer%C3%ADa%20y%20quiero%20cotizar%20un%20wrap" data-i18n="b1">WhatsApp</a>
+    <a class="btn-o" href="tel:+18053452773" data-i18n="b2">Llamar (805) 345-2773</a>
+  </div>
+</section>
+
+<footer>Customize It · L &amp; M Creative Service INC · 134 Inger Dr, Santa Maria, CA 93454 · (805) 345-2773 · Lun–Vie 9am–5pm</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <div class="lb-count" id="lb-count"></div>
+  <button class="lb-x" id="lb-x" aria-label="Cerrar">✕</button>
+  <button class="lb-nav lb-prev" id="lb-prev" aria-label="Anterior">‹</button>
+  <div class="lb-img-wrap">
+    <img id="lb-img" src="" alt="">
+  </div>
+  <button class="lb-nav lb-next" id="lb-next" aria-label="Siguiente">›</button>
+  <div class="lb-cap" id="lb-cap"></div>
+</div>
+
+<script>
+/* ── i18n ──────────────────────────────────────────────────── */
+const I18N = {
+  es: {
+    cta_top:'Cotizar',
+    h1:'Trabajos reales,<br><span>negocios reales</span>',
+    hero_p:'Desliza y mira wraps instalados por nuestro equipo — con precios desde y tiempo de entrega estimado.',
+    s1:'Logo y contacto en puertas y cajuela · cubre ~10–20% del vehículo',
+    s2:'Diseño en secciones estratégicas · cubre ~40–75% · el favorito de los contratistas',
+    s3:'El vehículo completo es tu anuncio · cobertura 100% · máxima presencia',
+    from:'desde', d1:'~2 días hábiles', d2:'~4 días hábiles', d3:'~6 días hábiles',
+    hint:'← Desliza para ver más →',
+    ts_h:'Lo que dicen nuestros clientes',
+    cta_h:'Tu troca puede ser la siguiente',
+    cta_p:'Mándanos fotos de tu vehículo y tu logo por WhatsApp — cotización gratis el mismo día.',
+    b1:'WhatsApp', b2:'Llamar (805) 345-2773'
+  },
+  en: {
+    cta_top:'Get a quote',
+    h1:'Real work,<br><span>real businesses</span>',
+    hero_p:'Swipe through wraps installed by our team — with starting prices and estimated turnaround.',
+    s1:'Logo and contact info on doors and tailgate · covers ~10–20% of the vehicle',
+    s2:'Design on strategic sections · covers ~40–75% · the contractor favorite',
+    s3:'The whole vehicle is your billboard · 100% coverage · maximum presence',
+    from:'from', d1:'~2 business days', d2:'~4 business days', d3:'~6 business days',
+    hint:'← Swipe to see more →',
+    ts_h:'What our clients say',
+    cta_h:'Your truck could be next',
+    cta_p:'Send us photos of your vehicle and your logo on WhatsApp — free same-day quote.',
+    b1:'WhatsApp', b2:'Call (805) 345-2773'
+  }
+};
+
+let lang = 'es';
+function setLang(l) {
+  lang = l;
+  document.documentElement.lang = l;
+  document.getElementById('b-es').classList.toggle('on', l === 'es');
+  document.getElementById('b-en').classList.toggle('on', l === 'en');
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.getAttribute('data-i18n');
+    if (I18N[l][k] !== undefined) el.innerHTML = I18N[l][k];
+  });
+}
+
+/* ── Photo data ────────────────────────────────────────────── */
+/* Parses filename pattern: {type}_{vehicle}_{industry}_{city-state}_{num}.jpg */
+function tc(s) {
+  return s.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+}
+function city(s) {
+  return tc(s.replace(/-ca$/, ''));
+}
+function parse(base, files) {
+  return files.map(f => {
+    const name = f.replace(/\.jpg$/, '');
+    const parts = name.split('_');
+    const vehicle = tc(parts[1]);
+    const industry = tc(parts[2]);
+    const loc = city(parts[3]);
+    return { img: base + f, t: vehicle, c: industry + ' · ' + loc };
+  });
+}
+
+const BASE_D  = '/assets/images/galeria/web/decals/';
+const BASE_P  = '/assets/images/galeria/web/partial-wrap/';
+const BASE_FW = '/assets/images/galeria/web/full-wrap/';
+
+const FILES_DECAL = [
+  'decal_cargo-van_concrete-coatings_pismo-beach-ca_01.jpg',
+  'decal_cargo-van_holistic-therapy_santa-maria-ca_01.jpg',
+  'decal_cargo-van_holistic-therapy_santa-maria-ca_02.jpg',
+  'decal_cargo-van_plumbing_lompoc-ca_01.jpg',
+  'decal_cargo-van_plumbing_lompoc-ca_02.jpg',
+  'decal_cargo-van_plumbing_lompoc-ca_03.jpg',
+  'decal_cargo-van_plumbing_san-luis-obispo-ca_01.jpg',
+  'decal_cargo-van_plumbing_san-luis-obispo-ca_02.jpg',
+  'decal_cargo-van_plumbing_san-luis-obispo-ca_03.jpg',
+  'decal_cargo-van_plumbing_santa-maria-ca_01.jpg',
+  'decal_cargo-van_plumbing_santa-maria-ca_02.jpg',
+  'decal_cargo-van_plumbing_santa-maria-ca_03.jpg',
+  'decal_cargo-van_plumbing_santa-maria-ca_04.jpg',
+  'decal_cargo-van_plumbing_santa-maria-ca_05.jpg',
+  'decal_cargo-van_plumbing_santa-maria-ca_06.jpg',
+  'decal_dump-trailer_landscaping_paso-robles-ca_01.jpg',
+  'decal_dump-trailer_landscaping_paso-robles-ca_02.jpg',
+  'decal_dump-trailer_landscaping_paso-robles-ca_03.jpg',
+  'decal_enclosed-trailer_landscaping_arroyo-grande-ca_01.jpg',
+  'decal_enclosed-trailer_landscaping_nipomo-ca_01.jpg',
+  'decal_enclosed-trailer_landscaping_nipomo-ca_02.jpg',
+  'decal_flatbed-truck_mobile-tire-service_santa-maria-ca_01.jpg',
+  'decal_food-trailer_catering_guadalupe-ca_01.jpg',
+  'decal_food-trailer_catering_guadalupe-ca_02.jpg',
+  'decal_food-trailer_mexican-food_santa-maria-ca_01.jpg',
+  'decal_food-trailer_mexican-food_santa-maria-ca_02.jpg',
+  'decal_food-trailer_mexican-food_santa-maria-ca_03.jpg',
+  'decal_food-trailer_nutrition-drinks_orcutt-ca_01.jpg',
+  'decal_food-trailer_nutrition-drinks_orcutt-ca_02.jpg',
+  'decal_food-trailer_nutrition-drinks_orcutt-ca_03.jpg',
+  'decal_pickup-truck_construction_templeton-ca_01.jpg',
+  'decal_pickup-truck_construction_templeton-ca_02.jpg',
+  'decal_pickup-truck_construction_templeton-ca_03.jpg',
+  'decal_pickup-truck_fencing_grover-beach-ca_01.jpg',
+  'decal_pickup-truck_fencing_grover-beach-ca_02.jpg',
+  'decal_pickup-truck_fencing_grover-beach-ca_03.jpg',
+  'decal_pickup-truck_landscaping_arroyo-grande-ca_01.jpg',
+  'decal_pickup-truck_landscaping_arroyo-grande-ca_02.jpg',
+  'decal_pickup-truck_landscaping_paso-robles-ca_01.jpg',
+  'decal_pickup-truck_landscaping_paso-robles-ca_02.jpg',
+  'decal_pickup-truck_landscaping_san-luis-obispo-ca_01.jpg',
+  'decal_pickup-truck_landscaping_san-luis-obispo-ca_02.jpg',
+  'decal_pickup-truck_landscaping_san-luis-obispo-ca_03.jpg',
+  'decal_pickup-truck_landscaping_santa-barbara-ca_01.jpg',
+  'decal_pickup-truck_landscaping_santa-barbara-ca_02.jpg',
+  'decal_pickup-truck_landscaping_santa-barbara-ca_03.jpg',
+  'decal_pickup-truck_landscaping_santa-barbara-ca_04.jpg',
+  'decal_pickup-truck_pressure-washing_pismo-beach-ca_01.jpg',
+  'decal_pickup-truck_pressure-washing_pismo-beach-ca_02.jpg',
+  'decal_septic-pump-truck_septic-sanitation_santa-ynez-ca_01.jpg',
+  'decal_septic-pump-truck_septic-sanitation_santa-ynez-ca_02.jpg',
+  'decal_utility-truck_concrete_santa-maria-ca_01.jpg',
+  'decal_utility-truck_construction_buellton-ca_01.jpg',
+  'decal_utility-truck_construction_buellton-ca_02.jpg',
+  'decal_utility-truck_construction_buellton-ca_03.jpg',
+  'decal_utility-truck_construction_morro-bay-ca_01.jpg',
+  'decal_utility-truck_construction_morro-bay-ca_02.jpg',
+  'decal_utility-truck_landscaping_goleta-ca_01.jpg',
+  'decal_utility-truck_landscaping_goleta-ca_02.jpg',
+  'decal_utility-truck_landscaping_goleta-ca_03.jpg',
+  'decal_utility-truck_landscaping_goleta-ca_04.jpg',
+  'decal_utility-truck_landscaping_nipomo-ca_01.jpg',
+  'decal_utility-truck_roofing_atascadero-ca_01.jpg',
+  'decal_utility-truck_roofing_atascadero-ca_02.jpg',
+  'decal_utility-truck_roofing_atascadero-ca_03.jpg',
+  'decal_utility-truck_tile-installation_solvang-ca_01.jpg',
+  'decal_utility-truck_tile-installation_solvang-ca_02.jpg',
+  'decal_utility-truck_tile-installation_solvang-ca_03.jpg'
+];
+
+const FILES_PARTIAL = [
+  'partial-wrap_cargo-van_appliance-repair_lompoc-ca_01.jpg',
+  'partial-wrap_cargo-van_appliance-repair_lompoc-ca_02.jpg',
+  'partial-wrap_cargo-van_appliance-repair_lompoc-ca_03.jpg',
+  'partial-wrap_cargo-van_cleaning-services_san-luis-obispo-ca_01.jpg',
+  'partial-wrap_cargo-van_cleaning-services_san-luis-obispo-ca_02.jpg',
+  'partial-wrap_cargo-van_cleaning-services_san-luis-obispo-ca_03.jpg',
+  'partial-wrap_cargo-van_concrete-coatings_pismo-beach-ca_01.jpg',
+  'partial-wrap_cargo-van_concrete-coatings_pismo-beach-ca_02.jpg',
+  'partial-wrap_cargo-van_mexican-grocery_santa-maria-ca_01.jpg',
+  'partial-wrap_cargo-van_mexican-grocery_santa-maria-ca_02.jpg',
+  'partial-wrap_cargo-van_mexican-grocery_santa-maria-ca_03.jpg',
+  'partial-wrap_cargo-van_painting_orcutt-ca_01.jpg',
+  'partial-wrap_cargo-van_painting_orcutt-ca_02.jpg',
+  'partial-wrap_cargo-van_painting_orcutt-ca_03.jpg',
+  'partial-wrap_pickup-truck_mexican-food_santa-maria-ca_01.jpg',
+  'partial-wrap_sedan_cleaning-services_santa-barbara-ca_01.jpg',
+  'partial-wrap_sedan_cleaning-services_santa-barbara-ca_02.jpg',
+  'partial-wrap_sedan_cleaning-services_santa-barbara-ca_03.jpg'
+];
+
+const FILES_FULL = [
+  'full-wrap_cargo-van_western-wear_santa-maria-ca_01.jpg',
+  'full-wrap_enclosed-trailer_landscaping_arroyo-grande-ca_01.jpg',
+  'full-wrap_enclosed-trailer_landscaping_arroyo-grande-ca_02.jpg',
+  'full-wrap_enclosed-trailer_landscaping_arroyo-grande-ca_03.jpg',
+  'full-wrap_food-trailer_catering_paso-robles-ca_01.jpg',
+  'full-wrap_food-trailer_catering_paso-robles-ca_02.jpg',
+  'full-wrap_food-trailer_catering_paso-robles-ca_03.jpg',
+  'full-wrap_food-trailer_filipino-food_santa-maria-ca_01.jpg',
+  'full-wrap_food-trailer_filipino-food_santa-maria-ca_02.jpg',
+  'full-wrap_food-trailer_filipino-food_santa-maria-ca_03.jpg',
+  'full-wrap_food-trailer_filipino-food_santa-maria-ca_04.jpg',
+  'full-wrap_food-trailer_hot-dogs_santa-barbara-ca_01.jpg',
+  'full-wrap_food-trailer_hot-dogs_santa-barbara-ca_02.jpg',
+  'full-wrap_food-trailer_mexican-food_lompoc-ca_01.jpg',
+  'full-wrap_food-trailer_mexican-food_lompoc-ca_02.jpg',
+  'full-wrap_food-trailer_mexican-food_san-luis-obispo-ca_01.jpg',
+  'full-wrap_food-trailer_mexican-food_santa-maria-ca_01.jpg',
+  'full-wrap_food-trailer_mexican-food_santa-maria-ca_02.jpg',
+  'full-wrap_food-trailer_mexican-food_santa-maria-ca_03.jpg',
+  'full-wrap_food-trailer_mexican-seafood_atascadero-ca_01.jpg',
+  'full-wrap_food-trailer_mexican-seafood_atascadero-ca_02.jpg',
+  'full-wrap_food-trailer_mexican-seafood_atascadero-ca_03.jpg',
+  'full-wrap_food-trailer_mexican-seafood_atascadero-ca_04.jpg',
+  'full-wrap_food-trailer_micheladas_guadalupe-ca_01.jpg',
+  'full-wrap_food-trailer_micheladas_guadalupe-ca_02.jpg',
+  'full-wrap_pickup-truck_fencing_nipomo-ca_01.jpg',
+  'full-wrap_pickup-truck_fencing_nipomo-ca_02.jpg',
+  'full-wrap_pickup-truck_fencing_nipomo-ca_03.jpg',
+  'full-wrap_shuttle-bus_tourism_pismo-beach-ca_01.jpg',
+  'full-wrap_utility-truck_construction_grover-beach-ca_01.jpg',
+  'full-wrap_utility-truck_construction_grover-beach-ca_02.jpg',
+  'full-wrap_utility-truck_construction_grover-beach-ca_03.jpg'
+];
+
+const FOTOS = {
+  decal:   parse(BASE_D,  FILES_DECAL),
+  partial: parse(BASE_P,  FILES_PARTIAL),
+  full:    parse(BASE_FW, FILES_FULL)
+};
+
+/* ── Render carousels ──────────────────────────────────────── */
+function render() {
+  for (const tipo in FOTOS) {
+    document.getElementById('strip-' + tipo).innerHTML =
+      FOTOS[tipo].map((f, i) =>
+        `<div class="foto" onclick="openLb('${tipo}',${i})" role="button" tabindex="0" aria-label="${f.t} – ${f.c}">
+           <img src="${f.img}" alt="${f.t} – ${f.c}" loading="lazy" width="300" height="220">
+           <div class="cap">${f.t}<small>${f.c}</small></div>
+         </div>`
+      ).join('');
+  }
+}
+
+/* ── Lightbox ──────────────────────────────────────────────── */
+let lbTipo = '', lbIdx = 0;
+const lb = document.getElementById('lb');
+
+function openLb(tipo, i) {
+  lbTipo = tipo; lbIdx = i;
+  showLb();
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('lb-img').focus();
+}
+function showLb() {
+  const f = FOTOS[lbTipo][lbIdx];
+  const img = document.getElementById('lb-img');
+  img.src = f.img;
+  img.alt = f.t + ' – ' + f.c;
+  document.getElementById('lb-cap').innerHTML = f.t + '<small>' + f.c + '</small>';
+  document.getElementById('lb-count').textContent = (lbIdx + 1) + ' / ' + FOTOS[lbTipo].length;
+}
+function closeLb() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+function lbStep(d) {
+  const list = FOTOS[lbTipo];
+  lbIdx = (lbIdx + d + list.length) % list.length;
+  showLb();
+}
+
+document.getElementById('lb-x').onclick = closeLb;
+document.getElementById('lb-prev').onclick = e => { e.stopPropagation(); lbStep(-1); };
+document.getElementById('lb-next').onclick = e => { e.stopPropagation(); lbStep(1); };
+lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+
+document.addEventListener('keydown', e => {
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLb();
+  if (e.key === 'ArrowRight') lbStep(1);
+  if (e.key === 'ArrowLeft')  lbStep(-1);
+});
+
+/* Swipe on lightbox (mobile) */
+let tX = null;
+lb.addEventListener('touchstart', e => { tX = e.touches[0].clientX; }, { passive: true });
+lb.addEventListener('touchend', e => {
+  if (tX === null) return;
+  const d = e.changedTouches[0].clientX - tX;
+  if (Math.abs(d) > 44) lbStep(d < 0 ? 1 : -1);
+  tX = null;
+}, { passive: true });
+
+/* Keyboard on carousel cards */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && document.activeElement.classList.contains('foto')) {
+    document.activeElement.click();
+  }
+});
+
+/* ── Init ──────────────────────────────────────────────────── */
+render();
+const q = new URLSearchParams(location.search);
+if (q.get('lang') === 'en') setLang('en');
+</script>
+</body>
+</html>
