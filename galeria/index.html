@@ -1,419 +1,436 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Galería de Trabajos — Customize It</title>
+<title>Vehicle Wrap Gallery — Santa Maria, CA | Customize It</title>
+<meta name="description" content="Browse 118+ vehicle wrap photos by Customize It in Santa Maria, CA. Decals, partial wraps, and full commercial wraps for service businesses across the Central Coast.">
+<link rel="canonical" href="https://www.customizeitca.com/galeria/">
 <link rel="icon" href="/assets/images/logos/customize_it_logo_web-08.png" type="image/png">
+<link rel="stylesheet" href="/assets/css/styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": "Vehicle Wrap Gallery — Customize It",
+  "description": "Portfolio of vehicle wraps installed by Customize It in Santa Maria, CA. Decals, partial wraps, and full commercial wraps for Central Coast businesses.",
+  "url": "https://www.customizeitca.com/galeria/",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Customize It",
+    "telephone": "+1-805-345-2773",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "134 Inger Dr",
+      "addressLocality": "Santa Maria",
+      "addressRegion": "CA",
+      "postalCode": "93454",
+      "addressCountry": "US"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.customizeitca.com/"},{"@type":"ListItem","position":2,"name":"Vehicle Wraps","item":"https://www.customizeitca.com/servicios/vehicle-wraps.html"},{"@type":"ListItem","position":3,"name":"Gallery","item":"https://www.customizeitca.com/galeria/"}]}
+</script>
+
 <style>
-/* ── Design tokens (mirrors the main site) ─────────────────── */
-:root {
-  --naranja: #ff5733;
-  --naranja-dk: #d94420;
-  --negro: #1a1a1a;
-  --texto: #4a4a4a;
-  --muted: #888;
-  --blanco: #fff;
-  --gris: #f5f5f5;
-  --border: #e5e5e5;
-  --radius: 14px;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body { font-family: 'Inter', system-ui, sans-serif; color: var(--texto); background: var(--blanco); line-height: 1.55; -webkit-font-smoothing: antialiased; }
-img { display: block; max-width: 100%; }
-a { text-decoration: none; color: inherit; }
+/* ── Gallery-specific styles ───────────────────────────── */
+.breadcrumb { max-width:1200px; margin:0 auto; padding:.75rem 2rem 0; font-size:.85rem; color:#888; }
+.breadcrumb a { color:var(--naranja); }
+.breadcrumb span { margin:0 .35rem; }
 
-/* ── Header ────────────────────────────────────────────────── */
-header {
-  position: sticky; top: 0; z-index: 50;
-  background: var(--blanco);
-  box-shadow: 0 1px 0 var(--border);
-}
-.hdr {
-  max-width: 960px; margin: 0 auto;
-  padding: 10px 16px;
-  display: flex; align-items: center; gap: 12px;
-}
-.hdr-logo { height: 40px; width: auto; }
-.lang {
-  margin-left: auto;
-  display: flex; border: 1.5px solid var(--border); border-radius: 999px; overflow: hidden;
-}
-.lang button {
-  background: none; border: none;
-  color: var(--muted); font: 600 .75rem 'Inter',sans-serif;
-  padding: 5px 11px; cursor: pointer; transition: background .15s, color .15s;
-}
-.lang button.on { background: var(--negro); color: var(--blanco); }
-.hdr-cta {
-  background: var(--naranja); color: var(--blanco);
-  font: 600 .85rem 'Inter',sans-serif;
-  padding: 9px 18px; border-radius: 999px;
-  white-space: nowrap; transition: background .2s, transform .2s;
-}
-.hdr-cta:hover { background: var(--naranja-dk); transform: translateY(-1px); }
+/* Hero */
+.g-hero { background: var(--negro); padding: 40px 2rem 36px; text-align: center; }
+.g-hero .eyebrow { font:600 .72rem/1 'Inter',sans-serif; letter-spacing:.16em; text-transform:uppercase; color:var(--naranja); margin-bottom:10px; }
+.g-hero h1 { font-size:clamp(1.75rem,5vw,2.6rem); font-weight:900; color:#fff; line-height:1.1; margin-bottom:10px; }
+.g-hero h1 span { color:var(--naranja); }
+.g-hero p { color:#aaa; max-width:520px; margin:0 auto; font-size:.93rem; }
 
-/* ── Hero ──────────────────────────────────────────────────── */
-.hero {
-  background: linear-gradient(135deg, var(--negro) 0%, #2a1a15 100%);
-  color: var(--blanco);
-  padding: 44px 16px 36px;
-  text-align: center;
-}
-.hero .eyebrow {
-  font: 600 .72rem 'Inter',sans-serif;
-  letter-spacing: .16em; text-transform: uppercase;
-  color: var(--naranja); margin-bottom: 10px;
-}
-.hero h1 {
-  font-size: clamp(1.85rem, 6vw, 2.9rem);
-  font-weight: 900; line-height: 1.08;
-  margin-bottom: 10px;
-}
-.hero h1 span { color: var(--naranja); }
-.hero p { color: #aaa; max-width: 520px; margin: 0 auto; font-size: .95rem; }
+/* Price summary cards */
+.price-summary { max-width:1100px; margin:2.5rem auto 0; padding:0 2rem; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; }
+.ps-card { background:#fff; border-radius:14px; padding:1.25rem 1.5rem; box-shadow:0 6px 20px rgba(0,0,0,.07); border-top:4px solid var(--naranja); text-align:center; }
+.ps-card.ps-popular { border-top-color:var(--negro); background:var(--negro); }
+.ps-card .ps-label { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:#aaa; margin-bottom:4px; }
+.ps-card.ps-popular .ps-label { color:#888; }
+.ps-card .ps-price { font-size:1.9rem; font-weight:900; color:var(--naranja); line-height:1; margin-bottom:4px; }
+.ps-card h3 { font-size:.9rem; font-weight:700; color:var(--negro); margin-bottom:2px; }
+.ps-card.ps-popular h3 { color:#fff; }
+.ps-card .ps-time { font-size:.78rem; color:#888; }
+.ps-card.ps-popular .ps-time { color:#666; }
+.ps-card .ps-badge { display:inline-block; background:var(--naranja); color:#fff; font-size:.68rem; font-weight:700; border-radius:999px; padding:2px 8px; margin-bottom:6px; }
 
-/* ── Section wrapper ───────────────────────────────────────── */
-.seccion { padding: 36px 0 10px; }
-.seccion:nth-child(even) { background: var(--gris); }
-.sec-head { max-width: 960px; margin: 0 auto; padding: 0 16px 14px; }
-.sec-head h2 {
-  font-size: clamp(1.4rem, 5vw, 1.9rem);
-  font-weight: 900; color: var(--negro); line-height: 1.1;
-}
-.sec-head .sub { color: var(--muted); font-size: .88rem; margin-top: 4px; }
-.chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
-.chip {
-  font: 600 .82rem 'Inter',sans-serif;
-  padding: 5px 12px; border-radius: 8px;
-  border: 1.5px solid var(--border); color: var(--texto);
-  background: var(--blanco);
-}
-.chip.price {
-  background: var(--naranja); color: var(--blanco);
-  border-color: var(--naranja);
-}
-.seccion:nth-child(even) .chip { background: var(--blanco); }
-.seccion:nth-child(even) .chip.price { background: var(--naranja); color: var(--blanco); border-color: var(--naranja); }
+/* Filter bar */
+.filter-bar { position:sticky; top:64px; z-index:40; background:#fff; border-bottom:1px solid #e5e5e5; padding:.75rem 0; }
+.filter-inner { max-width:1100px; margin:0 auto; padding:0 2rem; display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; }
+.wrap-tabs { display:flex; gap:.4rem; flex-wrap:wrap; }
+.wrap-tab { background:var(--gris-claro,#f5f5f5); border:none; border-radius:999px; padding:.45rem 1rem; font:600 .82rem 'Inter',sans-serif; color:var(--negro); cursor:pointer; transition:background .15s,color .15s; white-space:nowrap; }
+.wrap-tab:hover { background:#e8e8e8; }
+.wrap-tab.active { background:var(--negro); color:#fff; }
+.filter-selects { display:flex; gap:.5rem; flex-wrap:wrap; margin-left:auto; }
+.filter-select { background:#f5f5f5; border:1.5px solid #e0e0e0; border-radius:8px; padding:.4rem .75rem; font:500 .82rem 'Inter',sans-serif; color:var(--negro); cursor:pointer; appearance:none; -webkit-appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23888'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right .6rem center; padding-right:1.8rem; }
+.filter-select:focus { outline:2px solid var(--naranja); outline-offset:1px; }
+.filter-select.active { border-color:var(--naranja); background-color:#fff5f2; }
+.result-count { font:500 .78rem 'Inter',sans-serif; color:#888; white-space:nowrap; }
 
-/* ── Carousel strip ────────────────────────────────────────── */
-.strip {
-  display: flex; gap: 10px;
-  overflow-x: auto; padding: 4px 16px 20px;
-  scroll-snap-type: x proximity;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-.strip::-webkit-scrollbar { display: none; }
-.foto {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-  border-radius: var(--radius); overflow: hidden;
-  position: relative; cursor: pointer;
-  border: 1.5px solid var(--border);
-  background: var(--gris);
-  border-top: 3px solid var(--naranja);
-  box-shadow: 0 4px 16px rgba(0,0,0,.06);
-  transition: transform .2s, box-shadow .2s;
-}
-.foto:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,.12); }
-.foto img {
-  height: 220px; width: auto; max-width: 82vw;
-  object-fit: cover; display: block;
-}
-@media (min-width: 640px) { .foto img { height: 280px; } }
-.foto .cap {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  padding: 28px 12px 10px;
-  background: linear-gradient(transparent, rgba(0,0,0,.78));
-  color: var(--blanco);
-  font: 700 .95rem 'Inter',sans-serif;
-  line-height: 1.2;
-}
-.foto .cap small {
-  display: block;
-  font-weight: 400; font-size: .76rem;
-  color: rgba(255,255,255,.8); margin-top: 2px;
-}
-.hint {
-  max-width: 960px; margin: 0 auto; padding: 0 16px 8px;
-  color: var(--muted); font: 500 .73rem 'Inter',sans-serif;
-  text-transform: uppercase; letter-spacing: .1em;
-}
+/* Photo grid */
+.gallery-section { max-width:1100px; margin:2rem auto; padding:0 2rem 2rem; }
+.photo-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:.75rem; }
+@media (max-width:480px) { .photo-grid { grid-template-columns:repeat(2,1fr); gap:.5rem; } }
+.photo-card { border-radius:12px; overflow:hidden; aspect-ratio:4/3; position:relative; cursor:pointer; background:#f0f0f0; }
+.photo-card img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s; }
+.photo-card:hover img { transform:scale(1.04); }
+.photo-card .ph-cap { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent,rgba(0,0,0,.72)); color:#fff; padding:18px 10px 8px; font:600 .7rem 'Inter',sans-serif; opacity:0; transition:opacity .2s; }
+.photo-card:hover .ph-cap { opacity:1; }
+.photo-card .ph-wrap { position:absolute; top:8px; left:8px; background:rgba(0,0,0,.55); color:#fff; font:700 .65rem 'Inter',sans-serif; border-radius:999px; padding:2px 8px; text-transform:uppercase; letter-spacing:.04em; }
 
-/* ── Testimonials ──────────────────────────────────────────── */
-.testi { background: var(--gris); padding: 40px 16px; }
-.testi-inner { max-width: 760px; margin: 0 auto; }
-.testi h2 { font-size: clamp(1.3rem,4vw,1.7rem); font-weight: 900; color: var(--negro); margin-bottom: 16px; }
-.vid {
-  aspect-ratio: 16/9; border-radius: var(--radius); overflow: hidden;
-  border: 1.5px solid var(--border); margin-bottom: 20px;
-}
-.vid iframe { width: 100%; height: 100%; border: 0; }
-.reviews-wrap { border-radius: var(--radius); overflow: hidden; }
+/* No results */
+.no-results { text-align:center; padding:3rem 1rem; color:#888; display:none; }
+.no-results.show { display:block; }
+.no-results p { font-size:1rem; margin-bottom:.5rem; }
+.no-results a { color:var(--naranja); font-weight:600; }
 
-/* ── CTA final ─────────────────────────────────────────────── */
-.cta-final {
-  background: var(--naranja);
-  color: var(--blanco); text-align: center;
-  padding: 50px 16px 56px;
-}
-.cta-final h2 {
-  font-size: clamp(1.6rem, 6vw, 2.4rem);
-  font-weight: 900; line-height: 1.1; margin-bottom: 8px;
-}
-.cta-final p { opacity: .92; max-width: 440px; margin: 0 auto 22px; }
-.btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-.btn-w {
-  background: var(--blanco); color: var(--negro);
-  font: 700 .95rem 'Inter',sans-serif;
-  padding: 13px 26px; border-radius: 999px;
-  transition: transform .2s;
-}
-.btn-w:hover { transform: translateY(-2px); }
-.btn-o {
-  border: 2px solid rgba(255,255,255,.85); color: var(--blanco);
-  font: 700 .95rem 'Inter',sans-serif;
-  padding: 11px 24px; border-radius: 999px;
-  transition: background .2s;
-}
-.btn-o:hover { background: rgba(255,255,255,.15); }
+/* Investment table */
+.investment-section { max-width:1100px; margin:0 auto; padding:2rem 2rem; }
+.investment-section h2 { font-size:1.3rem; font-weight:900; color:var(--negro); margin-bottom:1rem; }
+.inv-table { width:100%; border-collapse:collapse; font-size:.88rem; }
+.inv-table th { background:var(--negro); color:#fff; padding:.65rem 1rem; text-align:left; font-weight:700; }
+.inv-table td { padding:.6rem 1rem; border-bottom:1px solid #eee; }
+.inv-table tr:last-child td { border-bottom:none; }
+.inv-table tr:nth-child(even) td { background:#fafafa; }
+.inv-table .price { font-weight:700; color:var(--naranja); }
+.inv-table-wrap { overflow-x:auto; border-radius:10px; border:1px solid #e5e5e5; }
 
-/* ── Footer ────────────────────────────────────────────────── */
-footer {
-  padding: 18px 16px;
-  text-align: center; color: var(--muted); font-size: .78rem;
-  border-top: 1px solid var(--border);
-}
+/* Notes */
+.notes-section { max-width:1100px; margin:0 auto; padding:0 2rem 2rem; }
+.notes-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
+.note-card { background:#f5f5f5; border-radius:12px; padding:1.25rem 1.25rem; }
+.note-card .note-icon { font-size:1.4rem; margin-bottom:.5rem; }
+.note-card h4 { font-size:.88rem; font-weight:700; color:var(--negro); margin-bottom:.35rem; }
+.note-card p { font-size:.82rem; color:#666; line-height:1.55; }
 
-/* ── Lightbox ──────────────────────────────────────────────── */
-.lb {
-  position: fixed; inset: 0; z-index: 200;
-  background: rgba(0,0,0,.96);
-  display: none; align-items: center; justify-content: center;
-  flex-direction: column;
-}
-.lb.open { display: flex; }
-.lb-img-wrap { position: relative; max-width: 100vw; max-height: 80vh; display: flex; align-items: center; justify-content: center; }
-.lb img {
-  max-width: 96vw; max-height: 78vh;
-  object-fit: contain; border-radius: 6px;
-  display: block;
-}
-.lb-count {
-  position: fixed; top: 14px; left: 0; right: 0;
-  text-align: center;
-  font: 600 .76rem 'Inter',sans-serif; color: rgba(255,255,255,.5);
-  letter-spacing: .1em;
-}
-.lb-x {
-  position: fixed; top: 8px; right: 12px;
-  width: 44px; height: 44px; border-radius: 50%;
-  border: 1px solid rgba(255,255,255,.2);
-  background: rgba(255,255,255,.08);
-  color: var(--blanco); font-size: 1.15rem;
-  cursor: pointer; display: flex; align-items: center; justify-content: center;
-  transition: background .2s;
-}
-.lb-x:hover { background: rgba(255,255,255,.18); }
-.lb-nav {
-  position: fixed; top: 50%; transform: translateY(-50%);
-  width: 44px; height: 44px; border-radius: 50%;
-  border: 1px solid rgba(255,255,255,.2);
-  background: rgba(255,255,255,.08);
-  color: var(--blanco); font-size: 1.25rem;
-  cursor: pointer; display: flex; align-items: center; justify-content: center;
-  transition: background .2s;
-}
-.lb-nav:hover { background: rgba(255,255,255,.2); }
-.lb-prev { left: 10px; }
-.lb-next { right: 10px; }
-@media (max-width: 600px) { .lb-nav { display: none; } }
-.lb-cap {
-  position: fixed; bottom: 0; left: 0; right: 0;
-  padding: 16px; text-align: center;
-  color: var(--blanco); font: 700 1rem 'Inter',sans-serif;
-}
-.lb-cap small { display: block; color: rgba(255,255,255,.6); font-weight: 400; font-size: .8rem; }
+/* Reviews */
+.reviews-section { max-width:1100px; margin:2rem auto 0; padding:0 2rem; }
+.reviews-section h2 { font-size:1.3rem; font-weight:900; color:var(--negro); margin-bottom:1rem; text-align:center; }
+.lc_reviews_widget { width:100%; min-height:420px; border:none; display:block; border-radius:12px; }
+
+/* Final CTA */
+.gallery-cta { background:var(--naranja); padding:3rem 2rem; text-align:center; color:#fff; margin-top:2.5rem; }
+.gallery-cta h2 { font-size:1.5rem; font-weight:900; margin-bottom:.5rem; }
+.gallery-cta p { opacity:.9; margin-bottom:1.5rem; max-width:480px; margin-left:auto; margin-right:auto; }
+.cta-btns { display:flex; flex-wrap:wrap; gap:.75rem; justify-content:center; }
+.cta-btns a { display:inline-flex; align-items:center; gap:.4rem; padding:.75rem 1.5rem; border-radius:999px; font:700 .95rem 'Inter',sans-serif; }
+.btn-wa { background:#25d366; color:#fff; }
+.btn-tel { background:rgba(0,0,0,.2); color:#fff; border:1.5px solid rgba(255,255,255,.35); }
+.btn-dark { background:var(--negro); color:#fff; }
+
+/* Lightbox */
+.lb { display:none; position:fixed; inset:0; z-index:1000; background:rgba(0,0,0,.95); justify-content:center; align-items:center; }
+.lb.open { display:flex; }
+.lb-img { max-width:92vw; max-height:88vh; border-radius:8px; object-fit:contain; }
+.lb-close { position:absolute; top:16px; right:20px; color:#fff; font-size:2rem; cursor:pointer; background:none; border:none; line-height:1; }
+.lb-prev,.lb-next { position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,.15); border:none; color:#fff; font-size:1.6rem; width:44px; height:44px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .2s; }
+.lb-prev:hover,.lb-next:hover { background:rgba(255,255,255,.3); }
+.lb-prev { left:12px; }
+.lb-next { right:12px; }
+.lb-caption { position:absolute; bottom:16px; left:0; right:0; text-align:center; color:rgba(255,255,255,.7); font-size:.78rem; }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-  <div class="hdr">
-    <a href="https://www.customizeitca.com/">
-      <img class="hdr-logo" src="/assets/images/logos/customize_it_logo_web-04.png" alt="Customize It">
+<!-- NAVIGATION -->
+<header id="site-header">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/assets/images/logos/customize_it_logo_web-04.png" alt="Customize It logo">
     </a>
-    <div class="lang" role="group" aria-label="Idioma / Language">
-      <button id="b-es" class="on" onclick="setLang('es')">ES</button>
-      <button id="b-en" onclick="setLang('en')">EN</button>
+    <nav class="nav-desktop" aria-label="Main navigation">
+      <a href="/servicios/vehicle-wraps.html" class="nav-wraps-link">Vehicle Wraps</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger">More Services <span class="nav-chevron">▾</span></button>
+        <div class="nav-dropdown-menu">
+          <a href="/servicios/uniformes.html">Uniforms</a>
+          <a href="/servicios/diseno-grafico.html">Graphic Design</a>
+          <a href="/servicios/grabado-laser.html">Laser Engraving</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger">Service Areas <span class="nav-chevron">▾</span></button>
+        <div class="nav-dropdown-menu">
+          <a href="/ubicaciones/santa-maria.html">Santa Maria</a>
+          <a href="/ubicaciones/orcutt.html">Orcutt</a>
+          <a href="/ubicaciones/nipomo.html">Nipomo</a>
+          <a href="/ubicaciones/arroyo-grande.html">Arroyo Grande</a>
+          <a href="/ubicaciones/lompoc.html">Lompoc</a>
+          <a href="/ubicaciones/atascadero.html">Atascadero</a>
+          <a href="/ubicaciones/paso-robles.html">Paso Robles</a>
+          <a href="/ubicaciones/san-luis-obispo.html">San Luis Obispo</a>
+          <a href="/ubicaciones/pismo-beach.html">Pismo Beach</a>
+        </div>
+      </div>
+      <a href="/ubicaciones/">Locations</a>
+      <a href="/about.html">About</a>
+      <a href="/contacto/">Contact</a>
+    </nav>
+    <div class="nav-ctas">
+      <a href="/contacto/" class="nav-quote-btn">Get a Quote</a>
+      <a href="tel:+18053452773" class="nav-phone">(805) 345-2773</a>
     </div>
-    <a class="hdr-cta" href="https://wa.me/18053452773?text=Hola%2C%20vi%20la%20galer%C3%ADa%20y%20quiero%20cotizar%20un%20wrap" data-i18n="cta_top">Cotizar</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="eyebrow">Santa Maria, CA · Central Coast</div>
-  <h1 data-i18n="h1">Trabajos reales,<br><span>negocios reales</span></h1>
-  <p data-i18n="hero_p">Desliza y mira wraps instalados por nuestro equipo — con precios desde y tiempo de entrega estimado.</p>
-</section>
-
-<!-- DECALS -->
-<section class="seccion">
-  <div class="sec-head">
-    <h2>Decals &amp; Lettering</h2>
-    <div class="sub" data-i18n="s1">Logo y contacto en puertas y cajuela · cubre ~10–20% del vehículo</div>
-    <div class="chips">
-      <span class="chip price"><span data-i18n="from">desde</span> $450</span>
-      <span class="chip">⏱ <span data-i18n="d1">~2 días hábiles</span></span>
-    </div>
+<div class="nav-mobile-overlay" id="navOverlay"></div>
+<div class="nav-mobile-panel" id="navPanel">
+  <nav aria-label="Mobile navigation">
+    <ul>
+      <li><a href="/servicios/vehicle-wraps.html" class="nav-wraps-link">Vehicle Wraps</a></li>
+      <li class="nav-panel-dropdown">
+        <button class="nav-panel-trigger">More Services <span class="nav-chevron-icon">▾</span></button>
+        <ul class="nav-panel-sub">
+          <li><a href="/servicios/uniformes.html">Uniforms</a></li>
+          <li><a href="/servicios/diseno-grafico.html">Graphic Design</a></li>
+          <li><a href="/servicios/grabado-laser.html">Laser Engraving</a></li>
+        </ul>
+      </li>
+      <li class="nav-panel-dropdown">
+        <button class="nav-panel-trigger">Service Areas <span class="nav-chevron-icon">▾</span></button>
+        <ul class="nav-panel-sub">
+          <li><a href="/ubicaciones/santa-maria.html">Santa Maria</a></li>
+          <li><a href="/ubicaciones/orcutt.html">Orcutt</a></li>
+          <li><a href="/ubicaciones/nipomo.html">Nipomo</a></li>
+          <li><a href="/ubicaciones/arroyo-grande.html">Arroyo Grande</a></li>
+          <li><a href="/ubicaciones/lompoc.html">Lompoc</a></li>
+          <li><a href="/ubicaciones/atascadero.html">Atascadero</a></li>
+          <li><a href="/ubicaciones/paso-robles.html">Paso Robles</a></li>
+          <li><a href="/ubicaciones/san-luis-obispo.html">San Luis Obispo</a></li>
+          <li><a href="/ubicaciones/pismo-beach.html">Pismo Beach</a></li>
+        </ul>
+      </li>
+      <li><a href="/ubicaciones/">Locations</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contacto/">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="nav-panel-ctas">
+    <a href="/contacto/" class="nav-quote-full">Get a Free Quote</a>
+    <a href="tel:+18053452773" class="nav-phone">(805) 345-2773</a>
   </div>
-  <div class="strip" id="strip-decal"></div>
-  <div class="hint" data-i18n="hint">← Desliza para ver más →</div>
-</section>
+</div>
+<script src="/assets/js/nav.js" defer></script>
 
-<!-- PARTIAL WRAP -->
-<section class="seccion">
-  <div class="sec-head">
-    <h2>Partial Wrap</h2>
-    <div class="sub" data-i18n="s2">Diseño en secciones estratégicas · cubre ~40–75% · el favorito de los contratistas</div>
-    <div class="chips">
-      <span class="chip price"><span data-i18n="from">desde</span> $1,249</span>
-      <span class="chip">⏱ <span data-i18n="d2">~4 días hábiles</span></span>
-    </div>
-  </div>
-  <div class="strip" id="strip-partial"></div>
-  <div class="hint" data-i18n="hint">← Desliza para ver más →</div>
-</section>
-
-<!-- FULL WRAP -->
-<section class="seccion">
-  <div class="sec-head">
-    <h2>Full Wrap</h2>
-    <div class="sub" data-i18n="s3">El vehículo completo es tu anuncio · cobertura 100% · máxima presencia</div>
-    <div class="chips">
-      <span class="chip price"><span data-i18n="from">desde</span> $2,700</span>
-      <span class="chip">⏱ <span data-i18n="d3">~6 días hábiles</span></span>
-    </div>
-  </div>
-  <div class="strip" id="strip-full"></div>
-  <div class="hint" data-i18n="hint">← Desliza para ver más →</div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testi">
-  <div class="testi-inner">
-    <h2 data-i18n="ts_h">Lo que dicen nuestros clientes</h2>
-    <div class="vid">
-      <iframe src="https://www.youtube.com/embed/0necdQ-wcTo" title="Testimonial — Customize It" loading="lazy" allowfullscreen></iframe>
-    </div>
-    <div class="reviews-wrap">
-      <script type="text/javascript" src="https://reputationhub.site/reputation/assets/review-widget.js"></script>
-      <iframe class="lc_reviews_widget" src="https://reputationhub.site/reputation/widgets/review_widget/5qpjOZ0JlVDTi2MO6xuZ" frameborder="0" scrolling="no" style="min-width:100%;width:100%;border-radius:14px;"></iframe>
-    </div>
-  </div>
-</section>
-
-<!-- CTA FINAL -->
-<section class="cta-final">
-  <h2 data-i18n="cta_h">Tu troca puede ser la siguiente</h2>
-  <p data-i18n="cta_p">Mándanos fotos de tu vehículo y tu logo por WhatsApp — cotización gratis el mismo día.</p>
-  <div class="btns">
-    <a class="btn-w" href="https://wa.me/18053452773?text=Hola%2C%20vi%20la%20galer%C3%ADa%20y%20quiero%20cotizar%20un%20wrap" data-i18n="b1">WhatsApp</a>
-    <a class="btn-o" href="tel:+18053452773" data-i18n="b2">Llamar (805) 345-2773</a>
-  </div>
-</section>
-
-<footer>Customize It · L &amp; M Creative Service INC · 134 Inger Dr, Santa Maria, CA 93454 · (805) 345-2773 · Lun–Vie 9am–5pm</footer>
-
-<!-- LIGHTBOX -->
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada">
-  <div class="lb-count" id="lb-count"></div>
-  <button class="lb-x" id="lb-x" aria-label="Cerrar">✕</button>
-  <button class="lb-nav lb-prev" id="lb-prev" aria-label="Anterior">‹</button>
-  <div class="lb-img-wrap">
-    <img id="lb-img" src="" alt="">
-  </div>
-  <button class="lb-nav lb-next" id="lb-next" aria-label="Siguiente">›</button>
-  <div class="lb-cap" id="lb-cap"></div>
+<div class="breadcrumb">
+  <a href="/">Home</a><span>›</span>
+  <a href="/servicios/vehicle-wraps.html">Vehicle Wraps</a><span>›</span>
+  <span>Gallery</span>
 </div>
 
+<!-- Hero -->
+<section class="g-hero">
+  <div class="eyebrow">118 Projects · Santa Maria, CA</div>
+  <h1>Vehicle Wrap <span>Gallery</span></h1>
+  <p>Real work for Central Coast businesses — decals, partial wraps, and full commercial wraps installed at our shop in Santa Maria, CA.</p>
+</section>
+
+<!-- Price summary -->
+<div class="price-summary">
+  <div class="ps-card">
+    <div class="ps-label">From</div>
+    <div class="ps-price">$450</div>
+    <h3>Decals &amp; Lettering</h3>
+    <div class="ps-time">~2 business days</div>
+  </div>
+  <div class="ps-card ps-popular">
+    <div class="ps-badge">⭐ Most Popular</div>
+    <div class="ps-label">From</div>
+    <div class="ps-price">$1,249</div>
+    <h3>Partial Wrap</h3>
+    <div class="ps-time">~4 business days</div>
+  </div>
+  <div class="ps-card">
+    <div class="ps-label">From</div>
+    <div class="ps-price">$2,700</div>
+    <h3>Full Commercial Wrap</h3>
+    <div class="ps-time">~6 business days</div>
+  </div>
+</div>
+
+<!-- Filter bar -->
+<div class="filter-bar" id="filterBar">
+  <div class="filter-inner">
+    <div class="wrap-tabs" role="group" aria-label="Filter by wrap type">
+      <button class="wrap-tab active" data-wrap="">All</button>
+      <button class="wrap-tab" data-wrap="decals">Decals</button>
+      <button class="wrap-tab" data-wrap="partial-wrap">Partial Wrap</button>
+      <button class="wrap-tab" data-wrap="full-wrap">Full Wrap</button>
+    </div>
+    <div class="filter-selects">
+      <select class="filter-select" id="indSelect" aria-label="Filter by industry">
+        <option value="">All Industries</option>
+        <option value="landscaping">Landscaping</option>
+        <option value="plumbing">Plumbing</option>
+        <option value="construction">Construction</option>
+        <option value="food">Food &amp; Catering</option>
+        <option value="cleaning">Cleaning Services</option>
+        <option value="painting">Painting</option>
+        <option value="roofing">Roofing</option>
+        <option value="fencing">Fencing</option>
+        <option value="other">Other</option>
+      </select>
+      <select class="filter-select" id="vehSelect" aria-label="Filter by vehicle type">
+        <option value="">All Vehicles</option>
+        <option value="cargo-van">Cargo Van</option>
+        <option value="pickup-truck">Pickup Truck</option>
+        <option value="utility-truck">Utility Truck</option>
+        <option value="food-trailer">Food Trailer</option>
+        <option value="enclosed-trailer">Enclosed Trailer</option>
+        <option value="dump-trailer">Dump Trailer</option>
+        <option value="sedan">Sedan</option>
+        <option value="shuttle-bus">Shuttle Bus</option>
+        <option value="other-truck">Other Truck</option>
+      </select>
+    </div>
+    <span class="result-count" id="resultCount"></span>
+  </div>
+</div>
+
+<!-- Photo grid -->
+<section class="gallery-section" id="gallerySection">
+  <div class="photo-grid" id="photoGrid"></div>
+  <div class="no-results" id="noResults">
+    <p>No photos found for this filter combination.</p>
+    <p><a href="/galeria/">Clear filters</a> or <a href="/contacto/">request a custom quote</a> — we may have done this work and just haven't uploaded the photos yet.</p>
+  </div>
+</section>
+
+<!-- Investment table -->
+<section class="investment-section">
+  <h2>Investment Ranges by Vehicle Type</h2>
+  <div class="inv-table-wrap">
+    <table class="inv-table">
+      <thead>
+        <tr><th>Vehicle</th><th>Decals</th><th>Partial Wrap</th><th>Full Wrap</th><th>Turnaround</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Magnetic Signs (any vehicle)</td><td class="price">$120–$299/pair</td><td>—</td><td>—</td><td>3–5 days</td></tr>
+        <tr><td>Pickup Truck / SUV</td><td class="price">$450+</td><td class="price">$1,249+</td><td class="price">$2,700+</td><td>~2 / ~4 / ~6 days</td></tr>
+        <tr><td>Cargo Van</td><td class="price">$500+</td><td class="price">$1,400+</td><td class="price">$2,900+</td><td>~2 / ~4 / ~6 days</td></tr>
+        <tr><td>Utility / Box Truck</td><td class="price">$600+</td><td class="price">$1,600+</td><td class="price">$3,062–$4,200</td><td>~3 / ~5 / ~7 days</td></tr>
+        <tr><td>Sprinter / High-Roof Van</td><td class="price">$1,200+</td><td>—</td><td class="price">$2,300+</td><td>5–7 days</td></tr>
+        <tr><td>Food Trailer</td><td class="price">$600+</td><td class="price">$1,500+</td><td class="price">$2,700+</td><td>~3 / ~5 / ~6 days</td></tr>
+        <tr><td>Enclosed Trailer</td><td class="price">$700+</td><td class="price">$1,800+</td><td class="price">$3,900+</td><td>~3 / ~5 / ~7 days</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:.8rem;color:#888;margin-top:.75rem;">* Prices are estimates. Final quote depends on vehicle size, design complexity, and materials selected. Quote is always free.</p>
+</section>
+
+<!-- Notes -->
+<section class="notes-section">
+  <div class="notes-grid">
+    <div class="note-card">
+      <div class="note-icon">🧲</div>
+      <h4>Magnetic Signs Available</h4>
+      <p>Starting at $120/pair. Great for personal vehicles used for work. Switch on and off in seconds — no commitment.</p>
+    </div>
+    <div class="note-card">
+      <div class="note-icon">🚛</div>
+      <h4>Fleet Discounts (3+ Vehicles)</h4>
+      <p>One base design adapted to your entire fleet. Special pricing for 3 or more vehicles. Keep your whole team looking consistent.</p>
+    </div>
+    <div class="note-card">
+      <div class="note-icon">📦</div>
+      <h4>Print &amp; Ship Nationwide</h4>
+      <p>Outside San Luis Obispo or Santa Barbara counties? We design, print on 3M vinyl, and ship UPS ready for any local installer. 3–4 business days.</p>
+    </div>
+    <div class="note-card">
+      <div class="note-icon">📅</div>
+      <h4>By Appointment Only</h4>
+      <p>No walk-ins. Schedule via WhatsApp or phone to confirm slot availability. Payment: 50% to start (min $350), 50% on delivery.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews-section">
+  <h2>What Our Clients Say</h2>
+  <iframe class="lc_reviews_widget" src="https://reputationhub.site/reputation/widgets/review_widget/5qpjOZ0JlVDTi2MO6xuZ" title="Customize It — client reviews" loading="lazy"></iframe>
+</section>
+
+<!-- CTA -->
+<section class="gallery-cta">
+  <h2>Ready to Brand Your Vehicle?</h2>
+  <p>Send us photos via WhatsApp and receive pricing options in less than 24 hours. No walk-ins — by appointment only.</p>
+  <div class="cta-btns">
+    <a class="btn-wa" href="https://wa.me/18053452773?text=Hi%2C%20I%20saw%20the%20gallery%20and%20I%27d%20like%20a%20quote%20for%20a%20wrap" target="_blank" rel="noopener">💬 WhatsApp</a>
+    <a class="btn-tel" href="tel:+18053452773">📞 (805) 345-2773</a>
+    <a class="btn-dark" href="/contacto/">Request a Free Quote</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="brand">
+      <img src="/assets/images/logos/customize_it_logo_web-05.png" alt="Customize It logo">
+      <address style="font-style:normal;">
+        <strong>Customize It</strong><br>
+        134 Inger Dr, Santa Maria, CA 93454<br>
+        <a href="tel:+18053452773" style="color:#fff;">(805) 345-2773</a><br>
+        <a href="mailto:info@customizeitca.com" style="color:#fff;">info@customizeitca.com</a><br>
+        Monday–Friday 9am–5pm
+      </address>
+    </div>
+    <div class="links">
+      <h4>Services</h4>
+      <a href="/servicios/vehicle-wraps.html">Vehicle Wraps</a>
+      <a href="/servicios/uniformes.html">Uniforms</a>
+      <a href="/servicios/diseno-grafico.html">Graphic Design</a>
+      <a href="/servicios/grabado-laser.html">Laser Engraving</a>
+    </div>
+    <div class="links">
+      <h4>Locations</h4>
+      <a href="/ubicaciones/santa-maria.html">Santa Maria</a>
+      <a href="/ubicaciones/orcutt.html">Orcutt</a>
+      <a href="/ubicaciones/nipomo.html">Nipomo</a>
+      <a href="/ubicaciones/arroyo-grande.html">Arroyo Grande</a>
+      <a href="/ubicaciones/lompoc.html">Lompoc</a>
+      <a href="/ubicaciones/atascadero.html">Atascadero</a>
+      <a href="/ubicaciones/paso-robles.html">Paso Robles</a>
+      <a href="/ubicaciones/pismo-beach.html">Pismo Beach</a>
+      <a href="/ubicaciones/san-luis-obispo.html">San Luis Obispo</a>
+    </div>
+    <div class="links">
+      <h4>Legal</h4>
+      <a href="/privacy-policy/">Privacy Policy</a>
+      <a href="/sms-terms/">SMS Terms</a>
+      <a href="/contacto/">Contact</a>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Customize It | L &amp; M Creative Service INC. All rights reserved. | 134 Inger Dr, Santa Maria, CA 93454 | (805) 345-2773</p>
+</footer>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+  <button class="lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+  <img class="lb-img" id="lbImg" src="" alt="">
+  <button class="lb-next" id="lbNext" aria-label="Next">›</button>
+  <div class="lb-caption" id="lbCap"></div>
+</div>
+
+<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a221020384d3095010e37cd" data-source="WEB_USER"></script>
+
 <script>
-/* ── i18n ──────────────────────────────────────────────────── */
-const I18N = {
-  es: {
-    cta_top:'Cotizar',
-    h1:'Trabajos reales,<br><span>negocios reales</span>',
-    hero_p:'Desliza y mira wraps instalados por nuestro equipo — con precios desde y tiempo de entrega estimado.',
-    s1:'Logo y contacto en puertas y cajuela · cubre ~10–20% del vehículo',
-    s2:'Diseño en secciones estratégicas · cubre ~40–75% · el favorito de los contratistas',
-    s3:'El vehículo completo es tu anuncio · cobertura 100% · máxima presencia',
-    from:'desde', d1:'~2 días hábiles', d2:'~4 días hábiles', d3:'~6 días hábiles',
-    hint:'← Desliza para ver más →',
-    ts_h:'Lo que dicen nuestros clientes',
-    cta_h:'Tu troca puede ser la siguiente',
-    cta_p:'Mándanos fotos de tu vehículo y tu logo por WhatsApp — cotización gratis el mismo día.',
-    b1:'WhatsApp', b2:'Llamar (805) 345-2773'
-  },
-  en: {
-    cta_top:'Get a quote',
-    h1:'Real work,<br><span>real businesses</span>',
-    hero_p:'Swipe through wraps installed by our team — with starting prices and estimated turnaround.',
-    s1:'Logo and contact info on doors and tailgate · covers ~10–20% of the vehicle',
-    s2:'Design on strategic sections · covers ~40–75% · the contractor favorite',
-    s3:'The whole vehicle is your billboard · 100% coverage · maximum presence',
-    from:'from', d1:'~2 business days', d2:'~4 business days', d3:'~6 business days',
-    hint:'← Swipe to see more →',
-    ts_h:'What our clients say',
-    cta_h:'Your truck could be next',
-    cta_p:'Send us photos of your vehicle and your logo on WhatsApp — free same-day quote.',
-    b1:'WhatsApp', b2:'Call (805) 345-2773'
-  }
-};
+// ── Photo data ──────────────────────────────────────────────
+const BASE = '/assets/images/galeria/web/';
 
-let lang = 'es';
-function setLang(l) {
-  lang = l;
-  document.documentElement.lang = l;
-  document.getElementById('b-es').classList.toggle('on', l === 'es');
-  document.getElementById('b-en').classList.toggle('on', l === 'en');
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const k = el.getAttribute('data-i18n');
-    if (I18N[l][k] !== undefined) el.innerHTML = I18N[l][k];
-  });
-}
-
-/* ── Photo data ────────────────────────────────────────────── */
-/* Parses filename pattern: {type}_{vehicle}_{industry}_{city-state}_{num}.jpg */
-function tc(s) {
-  return s.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-}
-function city(s) {
-  return tc(s.replace(/-ca$/, ''));
-}
-function parse(base, files) {
-  return files.map(f => {
-    const name = f.replace(/\.jpg$/, '');
-    const parts = name.split('_');
-    const vehicle = tc(parts[1]);
-    const industry = tc(parts[2]);
-    const loc = city(parts[3]);
-    return { img: base + f, t: vehicle, c: industry + ' · ' + loc };
-  });
-}
-
-const BASE_D  = '/assets/images/galeria/web/decals/';
-const BASE_P  = '/assets/images/galeria/web/partial-wrap/';
-const BASE_FW = '/assets/images/galeria/web/full-wrap/';
-
-const FILES_DECAL = [
+const DECAL_FILES = [
   'decal_cargo-van_concrete-coatings_pismo-beach-ca_01.jpg',
   'decal_cargo-van_holistic-therapy_santa-maria-ca_01.jpg',
   'decal_cargo-van_holistic-therapy_santa-maria-ca_02.jpg',
@@ -481,10 +498,10 @@ const FILES_DECAL = [
   'decal_utility-truck_roofing_atascadero-ca_03.jpg',
   'decal_utility-truck_tile-installation_solvang-ca_01.jpg',
   'decal_utility-truck_tile-installation_solvang-ca_02.jpg',
-  'decal_utility-truck_tile-installation_solvang-ca_03.jpg'
+  'decal_utility-truck_tile-installation_solvang-ca_03.jpg',
 ];
 
-const FILES_PARTIAL = [
+const PARTIAL_FILES = [
   'partial-wrap_cargo-van_appliance-repair_lompoc-ca_01.jpg',
   'partial-wrap_cargo-van_appliance-repair_lompoc-ca_02.jpg',
   'partial-wrap_cargo-van_appliance-repair_lompoc-ca_03.jpg',
@@ -502,10 +519,10 @@ const FILES_PARTIAL = [
   'partial-wrap_pickup-truck_mexican-food_santa-maria-ca_01.jpg',
   'partial-wrap_sedan_cleaning-services_santa-barbara-ca_01.jpg',
   'partial-wrap_sedan_cleaning-services_santa-barbara-ca_02.jpg',
-  'partial-wrap_sedan_cleaning-services_santa-barbara-ca_03.jpg'
+  'partial-wrap_sedan_cleaning-services_santa-barbara-ca_03.jpg',
 ];
 
-const FILES_FULL = [
+const FULL_FILES = [
   'full-wrap_cargo-van_western-wear_santa-maria-ca_01.jpg',
   'full-wrap_enclosed-trailer_landscaping_arroyo-grande-ca_01.jpg',
   'full-wrap_enclosed-trailer_landscaping_arroyo-grande-ca_02.jpg',
@@ -537,67 +554,132 @@ const FILES_FULL = [
   'full-wrap_shuttle-bus_tourism_pismo-beach-ca_01.jpg',
   'full-wrap_utility-truck_construction_grover-beach-ca_01.jpg',
   'full-wrap_utility-truck_construction_grover-beach-ca_02.jpg',
-  'full-wrap_utility-truck_construction_grover-beach-ca_03.jpg'
+  'full-wrap_utility-truck_construction_grover-beach-ca_03.jpg',
 ];
 
-const FOTOS = {
-  decal:   parse(BASE_D,  FILES_DECAL),
-  partial: parse(BASE_P,  FILES_PARTIAL),
-  full:    parse(BASE_FW, FILES_FULL)
-};
+// ── Parse filenames into photo objects ──────────────────────
+function tc(s) { return s.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '); }
+function parseCity(s) { return tc(s.replace(/-ca$/, '')); }
 
-/* ── Render carousels ──────────────────────────────────────── */
-function render() {
-  for (const tipo in FOTOS) {
-    document.getElementById('strip-' + tipo).innerHTML =
-      FOTOS[tipo].map((f, i) =>
-        `<div class="foto" onclick="openLb('${tipo}',${i})" role="button" tabindex="0" aria-label="${f.t} – ${f.c}">
-           <img src="${f.img}" alt="${f.t} – ${f.c}" loading="lazy" width="300" height="220">
-           <div class="cap">${f.t}<small>${f.c}</small></div>
-         </div>`
-      ).join('');
-  }
+function parseFiles(files, wrapType, wrapFolder) {
+  return files.map(f => {
+    const p = f.replace('.jpg','').split('_');
+    return {
+      src: BASE + wrapFolder + '/' + f,
+      wrap: wrapType,
+      veh: p[1],
+      ind: p[2],
+      city: parseCity(p[3]),
+      cap: tc(p[1]) + ' · ' + tc(p[2]) + ' · ' + parseCity(p[3])
+    };
+  });
 }
 
-/* ── Lightbox ──────────────────────────────────────────────── */
-let lbTipo = '', lbIdx = 0;
-const lb = document.getElementById('lb');
+const ALL_PHOTOS = [
+  ...parseFiles(DECAL_FILES, 'decals', 'decals'),
+  ...parseFiles(PARTIAL_FILES, 'partial-wrap', 'partial-wrap'),
+  ...parseFiles(FULL_FILES, 'full-wrap', 'full-wrap'),
+];
 
-function openLb(tipo, i) {
-  lbTipo = tipo; lbIdx = i;
-  showLb();
+// ── Industry mapping (deep link params → filename values) ───
+const FOOD_INDS = ['catering','mexican-food','mexican-seafood','micheladas','filipino-food','hot-dogs','nutrition-drinks','mexican-grocery'];
+const CLEANING_INDS = ['cleaning-services'];
+
+function matchInd(photo, indParam) {
+  if (!indParam) return true;
+  const i = photo.ind;
+  if (indParam === 'food') return FOOD_INDS.includes(i);
+  if (indParam === 'cleaning') return CLEANING_INDS.includes(i);
+  if (indParam === 'other') return !['landscaping','plumbing','construction','fencing','roofing','painting'].includes(i) && !FOOD_INDS.includes(i) && !CLEANING_INDS.includes(i);
+  return i === indParam;
+}
+
+function matchVeh(photo, vehParam) {
+  if (!vehParam) return true;
+  if (vehParam === 'other-truck') return ['flatbed-truck','septic-pump-truck'].includes(photo.veh);
+  return photo.veh === vehParam;
+}
+
+// ── Filter state ────────────────────────────────────────────
+let activeWrap = '', activeInd = '', activeVeh = '';
+let visiblePhotos = [];
+
+// ── Render grid ─────────────────────────────────────────────
+const grid = document.getElementById('photoGrid');
+const noResults = document.getElementById('noResults');
+const resultCount = document.getElementById('resultCount');
+
+function renderGrid() {
+  visiblePhotos = ALL_PHOTOS.filter(p =>
+    (!activeWrap || p.wrap === activeWrap) &&
+    matchInd(p, activeInd) &&
+    matchVeh(p, activeVeh)
+  );
+
+  grid.innerHTML = '';
+  noResults.classList.toggle('show', visiblePhotos.length === 0);
+  resultCount.textContent = visiblePhotos.length + ' photo' + (visiblePhotos.length !== 1 ? 's' : '');
+
+  const wrapLabels = { 'decals': 'Decal', 'partial-wrap': 'Partial', 'full-wrap': 'Full Wrap' };
+
+  visiblePhotos.forEach((p, i) => {
+    const card = document.createElement('div');
+    card.className = 'photo-card';
+    card.dataset.idx = i;
+
+    const badge = document.createElement('div');
+    badge.className = 'ph-wrap';
+    badge.textContent = wrapLabels[p.wrap] || p.wrap;
+
+    const img = document.createElement('img');
+    img.src = p.src;
+    img.alt = p.cap;
+    img.loading = 'lazy';
+    img.decoding = 'async';
+
+    const cap = document.createElement('div');
+    cap.className = 'ph-cap';
+    cap.textContent = p.cap;
+
+    card.appendChild(badge);
+    card.appendChild(img);
+    card.appendChild(cap);
+    card.addEventListener('click', () => openLb(i));
+    grid.appendChild(card);
+  });
+}
+
+// ── Lightbox ────────────────────────────────────────────────
+let lbIdx = 0;
+const lb = document.getElementById('lb');
+const lbImg = document.getElementById('lbImg');
+const lbCap = document.getElementById('lbCap');
+
+function openLb(idx) {
+  lbIdx = idx;
+  lbImg.src = visiblePhotos[lbIdx].src;
+  lbCap.textContent = visiblePhotos[lbIdx].cap;
   lb.classList.add('open');
   document.body.style.overflow = 'hidden';
-  document.getElementById('lb-img').focus();
 }
-function showLb() {
-  const f = FOTOS[lbTipo][lbIdx];
-  const img = document.getElementById('lb-img');
-  img.src = f.img;
-  img.alt = f.t + ' – ' + f.c;
-  document.getElementById('lb-cap').innerHTML = f.t + '<small>' + f.c + '</small>';
-  document.getElementById('lb-count').textContent = (lbIdx + 1) + ' / ' + FOTOS[lbTipo].length;
-}
+
 function closeLb() { lb.classList.remove('open'); document.body.style.overflow = ''; }
 function lbStep(d) {
-  const list = FOTOS[lbTipo];
-  lbIdx = (lbIdx + d + list.length) % list.length;
-  showLb();
+  lbIdx = (lbIdx + d + visiblePhotos.length) % visiblePhotos.length;
+  lbImg.src = visiblePhotos[lbIdx].src;
+  lbCap.textContent = visiblePhotos[lbIdx].cap;
 }
 
-document.getElementById('lb-x').onclick = closeLb;
-document.getElementById('lb-prev').onclick = e => { e.stopPropagation(); lbStep(-1); };
-document.getElementById('lb-next').onclick = e => { e.stopPropagation(); lbStep(1); };
+document.getElementById('lbClose').addEventListener('click', closeLb);
+document.getElementById('lbPrev').addEventListener('click', () => lbStep(-1));
+document.getElementById('lbNext').addEventListener('click', () => lbStep(1));
 lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
-
 document.addEventListener('keydown', e => {
   if (!lb.classList.contains('open')) return;
   if (e.key === 'Escape') closeLb();
+  if (e.key === 'ArrowLeft') lbStep(-1);
   if (e.key === 'ArrowRight') lbStep(1);
-  if (e.key === 'ArrowLeft')  lbStep(-1);
 });
-
-/* Swipe on lightbox (mobile) */
 let tX = null;
 lb.addEventListener('touchstart', e => { tX = e.touches[0].clientX; }, { passive: true });
 lb.addEventListener('touchend', e => {
@@ -607,17 +689,65 @@ lb.addEventListener('touchend', e => {
   tX = null;
 }, { passive: true });
 
-/* Keyboard on carousel cards */
-document.addEventListener('keydown', e => {
-  if (e.key === 'Enter' && document.activeElement.classList.contains('foto')) {
-    document.activeElement.click();
-  }
+// ── Filter controls ─────────────────────────────────────────
+document.querySelectorAll('.wrap-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.wrap-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeWrap = btn.dataset.wrap;
+    renderGrid();
+  });
 });
 
-/* ── Init ──────────────────────────────────────────────────── */
-render();
-const q = new URLSearchParams(location.search);
-if (q.get('lang') === 'en') setLang('en');
+const indSelect = document.getElementById('indSelect');
+const vehSelect = document.getElementById('vehSelect');
+
+indSelect.addEventListener('change', () => {
+  activeInd = indSelect.value;
+  indSelect.classList.toggle('active', !!activeInd);
+  renderGrid();
+});
+vehSelect.addEventListener('change', () => {
+  activeVeh = vehSelect.value;
+  vehSelect.classList.toggle('active', !!activeVeh);
+  renderGrid();
+});
+
+// ── Init from URL params ─────────────────────────────────────
+(function initFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  const wrap = params.get('wrap');
+  const ind = params.get('ind');
+  const veh = params.get('veh');
+
+  const wrapMap = { decal: 'decals', decals: 'decals', partial: 'partial-wrap', full: 'full-wrap' };
+
+  if (wrap && wrapMap[wrap]) {
+    activeWrap = wrapMap[wrap];
+    document.querySelectorAll('.wrap-tab').forEach(b => {
+      b.classList.toggle('active', b.dataset.wrap === activeWrap);
+    });
+  }
+  if (ind) {
+    activeInd = ind;
+    indSelect.value = ind;
+    indSelect.classList.add('active');
+  }
+  if (veh) {
+    activeVeh = veh;
+    vehSelect.value = veh;
+    vehSelect.classList.add('active');
+  }
+
+  renderGrid();
+
+  if (wrap || ind || veh) {
+    setTimeout(() => {
+      document.getElementById('gallerySection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 120);
+  }
+})();
 </script>
+
 </body>
 </html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Our Work — Vehicle Wraps Gallery | Customize It</title>
+<link rel="icon" href="/assets/images/logos/customize_it_logo_web-08.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --naranja: #ff5733;
+  --naranja-dk: #d94420;
+  --negro: #1a1a1a;
+  --texto: #4a4a4a;
+  --muted: #888;
+  --blanco: #fff;
+  --gris: #f5f5f5;
+  --border: #e5e5e5;
+  --radius: 14px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif; color: var(--texto); background: var(--blanco); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+/* Header */
+header { position: sticky; top: 0; z-index: 50; background: var(--blanco); box-shadow: 0 1px 0 var(--border); }
+.hdr { max-width: 900px; margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; gap: 12px; }
+.hdr-logo { height: 40px; width: auto; }
+.hdr-cta { margin-left: auto; background: var(--naranja); color: var(--blanco); font: 600 .85rem 'Inter',sans-serif; padding: 9px 18px; border-radius: 999px; white-space: nowrap; transition: background .2s; }
+.hdr-cta:hover { background: var(--naranja-dk); }
+
+/* Hero */
+.hero { background: linear-gradient(135deg, var(--negro) 0%, #2a1a15 100%); color: var(--blanco); padding: 40px 16px 32px; text-align: center; }
+.hero .eyebrow { font: 600 .72rem 'Inter',sans-serif; letter-spacing: .16em; text-transform: uppercase; color: var(--naranja); margin-bottom: 10px; }
+.hero h1 { font-size: clamp(1.75rem, 5.5vw, 2.6rem); font-weight: 900; line-height: 1.1; margin-bottom: 10px; }
+.hero h1 span { color: var(--naranja); }
+.hero p { color: #aaa; max-width: 500px; margin: 0 auto; font-size: .93rem; }
+
+/* Wrap sections */
+.wrap-section { max-width: 900px; margin: 0 auto; padding: 40px 16px 0; }
+.wrap-section:last-of-type { padding-bottom: 40px; }
+.wrap-header { margin-bottom: 16px; }
+.wrap-header h2 { font-size: 1.35rem; font-weight: 900; color: var(--negro); margin-bottom: 4px; }
+.wrap-header p { font-size: .88rem; color: var(--muted); }
+.wrap-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.chip { display: inline-block; background: var(--gris); border-radius: 999px; padding: 4px 12px; font: 600 .78rem 'Inter',sans-serif; color: var(--negro); }
+.chip.price { background: var(--naranja); color: var(--blanco); }
+
+/* Carousel strip */
+.strip-wrap { position: relative; }
+.strip {
+  display: flex; gap: 10px;
+  overflow-x: auto; scroll-snap-type: x proximity;
+  padding-bottom: 10px; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.strip::-webkit-scrollbar { display: none; }
+.strip-item {
+  flex: 0 0 260px; scroll-snap-align: start;
+  border-radius: var(--radius); overflow: hidden; cursor: pointer;
+  position: relative; aspect-ratio: 4/3; background: #eee;
+}
+@media (max-width: 480px) { .strip-item { flex: 0 0 220px; } }
+.strip-item img { width: 100%; height: 100%; object-fit: cover; }
+.strip-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,.72));
+  color: #fff; padding: 20px 10px 8px; font: 600 .72rem 'Inter',sans-serif;
+}
+.strip-hint { font-size: .72rem; color: var(--muted); margin-top: 6px; padding-left: 2px; }
+
+/* Divider */
+.divider { height: 1px; background: var(--border); max-width: 900px; margin: 0 auto; }
+
+/* Reviews */
+.reviews-section { max-width: 900px; margin: 40px auto 0; padding: 0 16px; }
+.reviews-section h2 { font-size: 1.25rem; font-weight: 900; color: var(--negro); margin-bottom: 16px; text-align: center; }
+.reviews-placeholder { background: var(--gris); border-radius: var(--radius); padding: 2rem; text-align: center; color: var(--muted); font-size: .85rem; }
+.lc_reviews_widget { width: 100%; min-height: 420px; border: none; border-radius: var(--radius); display: block; }
+
+/* Video */
+.video-section { max-width: 900px; margin: 40px auto 0; padding: 0 16px; }
+.video-section h2 { font-size: 1.25rem; font-weight: 900; color: var(--negro); margin-bottom: 14px; text-align: center; }
+.video-wrap { position: relative; padding-bottom: 56.25%; border-radius: var(--radius); overflow: hidden; background: #000; }
+.video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+
+/* CTA */
+.cta-section { background: var(--negro); color: var(--blanco); margin-top: 40px; padding: 40px 16px; text-align: center; }
+.cta-section h2 { font-size: 1.4rem; font-weight: 900; margin-bottom: 8px; }
+.cta-section p { color: #aaa; font-size: .9rem; margin-bottom: 20px; max-width: 460px; margin-left: auto; margin-right: auto; }
+.cta-btns { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.btn-wa { background: #25d366; color: #fff; font: 700 .95rem 'Inter',sans-serif; padding: 12px 24px; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px; transition: opacity .2s; }
+.btn-wa:hover { opacity: .9; }
+.btn-tel { background: rgba(255,255,255,.12); color: #fff; border: 1.5px solid rgba(255,255,255,.3); font: 700 .95rem 'Inter',sans-serif; padding: 12px 24px; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px; transition: background .2s; }
+.btn-tel:hover { background: rgba(255,255,255,.2); }
+.btn-quote { background: var(--naranja); color: #fff; font: 700 .95rem 'Inter',sans-serif; padding: 12px 24px; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px; transition: background .2s; }
+.btn-quote:hover { background: var(--naranja-dk); }
+
+/* Lightbox */
+.lb { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,.95); justify-content: center; align-items: center; }
+.lb.open { display: flex; }
+.lb-img { max-width: 92vw; max-height: 88vh; border-radius: 8px; object-fit: contain; }
+.lb-close { position: absolute; top: 16px; right: 20px; color: #fff; font-size: 2rem; cursor: pointer; background: none; border: none; line-height: 1; }
+.lb-prev, .lb-next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,.15); border: none; color: #fff; font-size: 1.6rem; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s; }
+.lb-prev:hover, .lb-next:hover { background: rgba(255,255,255,.3); }
+.lb-prev { left: 12px; }
+.lb-next { right: 12px; }
+.lb-caption { position: absolute; bottom: 16px; left: 0; right: 0; text-align: center; color: rgba(255,255,255,.7); font-size: .78rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hdr">
+    <a href="/"><img class="hdr-logo" src="/assets/images/logos/customize_it_logo_web-04.png" alt="Customize It"></a>
+    <a class="hdr-cta" href="/contacto/">Get a Free Quote</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">Our Work · Santa Maria, CA</div>
+  <h1>Vehicle Wraps for <span>Central Coast</span> Businesses</h1>
+  <p>Decals, partial wraps, and full commercial wraps — all printed and installed in Santa Maria, CA.</p>
+</div>
+
+<!-- Decals & Lettering -->
+<div class="wrap-section" id="decals">
+  <div class="wrap-header">
+    <h2>Decals &amp; Lettering</h2>
+    <p>The fastest way to brand your vehicle. Professional look, low investment.</p>
+  </div>
+  <div class="wrap-chips">
+    <span class="chip price">From $450</span>
+    <span class="chip">~2 business days</span>
+    <span class="chip">Design included</span>
+  </div>
+  <div class="strip-wrap">
+    <div class="strip" id="strip-decals"></div>
+  </div>
+  <p class="strip-hint">Swipe to see more →</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- Partial Wrap -->
+<div class="wrap-section" id="partial">
+  <div class="wrap-header">
+    <h2>Partial Wraps</h2>
+    <p>The most popular option — bold graphics at a fraction of the cost of a full wrap.</p>
+  </div>
+  <div class="wrap-chips">
+    <span class="chip price">From $1,249</span>
+    <span class="chip">~4 business days</span>
+    <span class="chip">3M &amp; Avery materials</span>
+  </div>
+  <div class="strip-wrap">
+    <div class="strip" id="strip-partial"></div>
+  </div>
+  <p class="strip-hint">Swipe to see more →</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- Full Wrap -->
+<div class="wrap-section" id="fullwrap">
+  <div class="wrap-header">
+    <h2>Full Commercial Wraps</h2>
+    <p>Complete vehicle coverage — maximum visibility, 5-year warranty.</p>
+  </div>
+  <div class="wrap-chips">
+    <span class="chip price">From $2,700</span>
+    <span class="chip">~6 business days</span>
+    <span class="chip">5-year warranty</span>
+  </div>
+  <div class="strip-wrap">
+    <div class="strip" id="strip-full"></div>
+  </div>
+  <p class="strip-hint">Swipe to see more →</p>
+</div>
+
+<!-- Video -->
+<div class="video-section">
+  <h2>See How We Work</h2>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/0necdQ-wcTo" title="Customize It — vehicle wrap process" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+
+<!-- Reviews -->
+<div class="reviews-section">
+  <h2>What Our Clients Say</h2>
+  <iframe class="lc_reviews_widget" src="https://reputationhub.site/reputation/widgets/review_widget/5qpjOZ0JlVDTi2MO6xuZ" title="Customize It — client reviews" loading="lazy"></iframe>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Ready to Wrap Your Vehicle?</h2>
+  <p>Send us photos of your vehicle via WhatsApp and receive pricing options in less than 24 hours.</p>
+  <div class="cta-btns">
+    <a class="btn-wa" href="https://wa.me/18053452773?text=Hi%2C%20I%20saw%20the%20gallery%20and%20I%27d%20like%20a%20quote%20for%20a%20wrap" target="_blank" rel="noopener">💬 WhatsApp</a>
+    <a class="btn-tel" href="tel:+18053452773">📞 (805) 345-2773</a>
+    <a class="btn-quote" href="/contacto/">Request a Free Quote</a>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo lightbox">
+  <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+  <button class="lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+  <img class="lb-img" id="lbImg" src="" alt="">
+  <button class="lb-next" id="lbNext" aria-label="Next">›</button>
+  <div class="lb-caption" id="lbCap"></div>
+</div>
+
+<script>
+const BASE = '/assets/images/galeria/web/';
+
+const DECALS = [
+  'decal_cargo-van_concrete-coatings_pismo-beach-ca_01.jpg',
+  'decal_cargo-van_holistic-therapy_santa-maria-ca_01.jpg',
+  'decal_cargo-van_holistic-therapy_santa-maria-ca_02.jpg',
+  'decal_cargo-van_plumbing_lompoc-ca_01.jpg',
+  'decal_cargo-van_plumbing_lompoc-ca_02.jpg',
+  'decal_cargo-van_plumbing_lompoc-ca_03.jpg',
+  'decal_cargo-van_plumbing_san-luis-obispo-ca_01.jpg',
+  'decal_cargo-van_plumbing_san-luis-obispo-ca_02.jpg',
+  'decal_cargo-van_plumbing_san-luis-obispo-ca_03.jpg',
+  'decal_cargo-van_plumbing_santa-maria-ca_01.jpg',
+  'decal_cargo-van_plumbing_santa-maria-ca_02.jpg',
+  'decal_cargo-van_plumbing_santa-maria-ca_03.jpg',
+  'decal_cargo-van_plumbing_santa-maria-ca_04.jpg',
+  'decal_cargo-van_plumbing_santa-maria-ca_05.jpg',
+  'decal_cargo-van_plumbing_santa-maria-ca_06.jpg',
+  'decal_dump-trailer_landscaping_paso-robles-ca_01.jpg',
+  'decal_dump-trailer_landscaping_paso-robles-ca_02.jpg',
+  'decal_dump-trailer_landscaping_paso-robles-ca_03.jpg',
+  'decal_enclosed-trailer_landscaping_arroyo-grande-ca_01.jpg',
+  'decal_enclosed-trailer_landscaping_nipomo-ca_01.jpg',
+  'decal_enclosed-trailer_landscaping_nipomo-ca_02.jpg',
+  'decal_flatbed-truck_mobile-tire-service_santa-maria-ca_01.jpg',
+  'decal_food-trailer_catering_guadalupe-ca_01.jpg',
+  'decal_food-trailer_catering_guadalupe-ca_02.jpg',
+  'decal_food-trailer_mexican-food_santa-maria-ca_01.jpg',
+  'decal_food-trailer_mexican-food_santa-maria-ca_02.jpg',
+  'decal_food-trailer_mexican-food_santa-maria-ca_03.jpg',
+  'decal_food-trailer_nutrition-drinks_orcutt-ca_01.jpg',
+  'decal_food-trailer_nutrition-drinks_orcutt-ca_02.jpg',
+  'decal_food-trailer_nutrition-drinks_orcutt-ca_03.jpg',
+  'decal_pickup-truck_construction_templeton-ca_01.jpg',
+  'decal_pickup-truck_construction_templeton-ca_02.jpg',
+  'decal_pickup-truck_construction_templeton-ca_03.jpg',
+  'decal_pickup-truck_fencing_grover-beach-ca_01.jpg',
+  'decal_pickup-truck_fencing_grover-beach-ca_02.jpg',
+  'decal_pickup-truck_fencing_grover-beach-ca_03.jpg',
+  'decal_pickup-truck_landscaping_arroyo-grande-ca_01.jpg',
+  'decal_pickup-truck_landscaping_arroyo-grande-ca_02.jpg',
+  'decal_pickup-truck_landscaping_paso-robles-ca_01.jpg',
+  'decal_pickup-truck_landscaping_paso-robles-ca_02.jpg',
+  'decal_pickup-truck_landscaping_san-luis-obispo-ca_01.jpg',
+  'decal_pickup-truck_landscaping_san-luis-obispo-ca_02.jpg',
+  'decal_pickup-truck_landscaping_san-luis-obispo-ca_03.jpg',
+  'decal_pickup-truck_landscaping_santa-barbara-ca_01.jpg',
+  'decal_pickup-truck_landscaping_santa-barbara-ca_02.jpg',
+  'decal_pickup-truck_landscaping_santa-barbara-ca_03.jpg',
+  'decal_pickup-truck_landscaping_santa-barbara-ca_04.jpg',
+  'decal_pickup-truck_pressure-washing_pismo-beach-ca_01.jpg',
+  'decal_pickup-truck_pressure-washing_pismo-beach-ca_02.jpg',
+  'decal_septic-pump-truck_septic-sanitation_santa-ynez-ca_01.jpg',
+  'decal_septic-pump-truck_septic-sanitation_santa-ynez-ca_02.jpg',
+  'decal_utility-truck_concrete_santa-maria-ca_01.jpg',
+  'decal_utility-truck_construction_buellton-ca_01.jpg',
+  'decal_utility-truck_construction_buellton-ca_02.jpg',
+  'decal_utility-truck_construction_buellton-ca_03.jpg',
+  'decal_utility-truck_construction_morro-bay-ca_01.jpg',
+  'decal_utility-truck_construction_morro-bay-ca_02.jpg',
+  'decal_utility-truck_landscaping_goleta-ca_01.jpg',
+  'decal_utility-truck_landscaping_goleta-ca_02.jpg',
+  'decal_utility-truck_landscaping_goleta-ca_03.jpg',
+  'decal_utility-truck_landscaping_goleta-ca_04.jpg',
+  'decal_utility-truck_landscaping_nipomo-ca_01.jpg',
+  'decal_utility-truck_roofing_atascadero-ca_01.jpg',
+  'decal_utility-truck_roofing_atascadero-ca_02.jpg',
+  'decal_utility-truck_roofing_atascadero-ca_03.jpg',
+  'decal_utility-truck_tile-installation_solvang-ca_01.jpg',
+  'decal_utility-truck_tile-installation_solvang-ca_02.jpg',
+  'decal_utility-truck_tile-installation_solvang-ca_03.jpg',
+];
+
+const PARTIALS = [
+  'partial-wrap_cargo-van_appliance-repair_lompoc-ca_01.jpg',
+  'partial-wrap_cargo-van_appliance-repair_lompoc-ca_02.jpg',
+  'partial-wrap_cargo-van_appliance-repair_lompoc-ca_03.jpg',
+  'partial-wrap_cargo-van_cleaning-services_san-luis-obispo-ca_01.jpg',
+  'partial-wrap_cargo-van_cleaning-services_san-luis-obispo-ca_02.jpg',
+  'partial-wrap_cargo-van_cleaning-services_san-luis-obispo-ca_03.jpg',
+  'partial-wrap_cargo-van_concrete-coatings_pismo-beach-ca_01.jpg',
+  'partial-wrap_cargo-van_concrete-coatings_pismo-beach-ca_02.jpg',
+  'partial-wrap_cargo-van_mexican-grocery_santa-maria-ca_01.jpg',
+  'partial-wrap_cargo-van_mexican-grocery_santa-maria-ca_02.jpg',
+  'partial-wrap_cargo-van_mexican-grocery_santa-maria-ca_03.jpg',
+  'partial-wrap_cargo-van_painting_orcutt-ca_01.jpg',
+  'partial-wrap_cargo-van_painting_orcutt-ca_02.jpg',
+  'partial-wrap_cargo-van_painting_orcutt-ca_03.jpg',
+  'partial-wrap_pickup-truck_mexican-food_santa-maria-ca_01.jpg',
+  'partial-wrap_sedan_cleaning-services_santa-barbara-ca_01.jpg',
+  'partial-wrap_sedan_cleaning-services_santa-barbara-ca_02.jpg',
+  'partial-wrap_sedan_cleaning-services_santa-barbara-ca_03.jpg',
+];
+
+const FULLS = [
+  'full-wrap_cargo-van_western-wear_santa-maria-ca_01.jpg',
+  'full-wrap_enclosed-trailer_landscaping_arroyo-grande-ca_01.jpg',
+  'full-wrap_enclosed-trailer_landscaping_arroyo-grande-ca_02.jpg',
+  'full-wrap_enclosed-trailer_landscaping_arroyo-grande-ca_03.jpg',
+  'full-wrap_food-trailer_catering_paso-robles-ca_01.jpg',
+  'full-wrap_food-trailer_catering_paso-robles-ca_02.jpg',
+  'full-wrap_food-trailer_catering_paso-robles-ca_03.jpg',
+  'full-wrap_food-trailer_filipino-food_santa-maria-ca_01.jpg',
+  'full-wrap_food-trailer_filipino-food_santa-maria-ca_02.jpg',
+  'full-wrap_food-trailer_filipino-food_santa-maria-ca_03.jpg',
+  'full-wrap_food-trailer_filipino-food_santa-maria-ca_04.jpg',
+  'full-wrap_food-trailer_hot-dogs_santa-barbara-ca_01.jpg',
+  'full-wrap_food-trailer_hot-dogs_santa-barbara-ca_02.jpg',
+  'full-wrap_food-trailer_mexican-food_lompoc-ca_01.jpg',
+  'full-wrap_food-trailer_mexican-food_lompoc-ca_02.jpg',
+  'full-wrap_food-trailer_mexican-food_san-luis-obispo-ca_01.jpg',
+  'full-wrap_food-trailer_mexican-food_santa-maria-ca_01.jpg',
+  'full-wrap_food-trailer_mexican-food_santa-maria-ca_02.jpg',
+  'full-wrap_food-trailer_mexican-food_santa-maria-ca_03.jpg',
+  'full-wrap_food-trailer_mexican-seafood_atascadero-ca_01.jpg',
+  'full-wrap_food-trailer_mexican-seafood_atascadero-ca_02.jpg',
+  'full-wrap_food-trailer_mexican-seafood_atascadero-ca_03.jpg',
+  'full-wrap_food-trailer_mexican-seafood_atascadero-ca_04.jpg',
+  'full-wrap_food-trailer_micheladas_guadalupe-ca_01.jpg',
+  'full-wrap_food-trailer_micheladas_guadalupe-ca_02.jpg',
+  'full-wrap_pickup-truck_fencing_nipomo-ca_01.jpg',
+  'full-wrap_pickup-truck_fencing_nipomo-ca_02.jpg',
+  'full-wrap_pickup-truck_fencing_nipomo-ca_03.jpg',
+  'full-wrap_shuttle-bus_tourism_pismo-beach-ca_01.jpg',
+  'full-wrap_utility-truck_construction_grover-beach-ca_01.jpg',
+  'full-wrap_utility-truck_construction_grover-beach-ca_02.jpg',
+  'full-wrap_utility-truck_construction_grover-beach-ca_03.jpg',
+];
+
+function tc(s) { return s.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '); }
+function parseCity(s) { return tc(s.replace(/-ca$/, '')); }
+
+function parseFiles(files, folder) {
+  return files.map(f => {
+    const p = f.replace('.jpg','').split('_');
+    return {
+      src: BASE + folder + '/' + f,
+      cap: tc(p[1]) + ' · ' + tc(p[2]) + ' · ' + parseCity(p[3])
+    };
+  });
+}
+
+const photos = {
+  decals: parseFiles(DECALS, 'decals'),
+  partial: parseFiles(PARTIALS, 'partial-wrap'),
+  full: parseFiles(FULLS, 'full-wrap'),
+};
+
+// Build carousels
+function buildStrip(containerId, items) {
+  const el = document.getElementById(containerId);
+  items.forEach((item, i) => {
+    const div = document.createElement('div');
+    div.className = 'strip-item';
+    div.dataset.src = item.src;
+    div.dataset.cap = item.cap;
+    div.dataset.idx = i;
+    const img = document.createElement('img');
+    img.src = item.src;
+    img.alt = item.cap;
+    img.loading = 'lazy';
+    const cap = document.createElement('div');
+    cap.className = 'strip-caption';
+    cap.textContent = item.cap;
+    div.appendChild(img);
+    div.appendChild(cap);
+    div.addEventListener('click', () => openLb(item.src, item.cap, containerId, i));
+    el.appendChild(div);
+  });
+}
+
+buildStrip('strip-decals', photos.decals);
+buildStrip('strip-partial', photos.partial);
+buildStrip('strip-full', photos.full);
+
+// Lightbox
+let lbList = [], lbIdx = 0;
+const lb = document.getElementById('lb');
+const lbImg = document.getElementById('lbImg');
+const lbCap = document.getElementById('lbCap');
+
+function openLb(src, cap, stripId, idx) {
+  const key = stripId.replace('strip-','');
+  const map = { decals: photos.decals, partial: photos.partial, full: photos.full };
+  lbList = map[key] || photos.decals;
+  lbIdx = idx;
+  lbImg.src = lbList[lbIdx].src;
+  lbCap.textContent = lbList[lbIdx].cap;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLb() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+function lbStep(d) {
+  lbIdx = (lbIdx + d + lbList.length) % lbList.length;
+  lbImg.src = lbList[lbIdx].src;
+  lbCap.textContent = lbList[lbIdx].cap;
+}
+
+document.getElementById('lbClose').addEventListener('click', closeLb);
+document.getElementById('lbPrev').addEventListener('click', () => lbStep(-1));
+document.getElementById('lbNext').addEventListener('click', () => lbStep(1));
+lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+document.addEventListener('keydown', e => {
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLb();
+  if (e.key === 'ArrowLeft') lbStep(-1);
+  if (e.key === 'ArrowRight') lbStep(1);
+});
+
+// Touch swipe
+let tX = null;
+lb.addEventListener('touchstart', e => { tX = e.touches[0].clientX; }, { passive: true });
+lb.addEventListener('touchend', e => {
+  if (tX === null) return;
+  const d = e.changedTouches[0].clientX - tX;
+  if (Math.abs(d) > 44) lbStep(d < 0 ? 1 : -1);
+  tX = null;
+}, { passive: true });
+</script>
+
+<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a221020384d3095010e37cd" data-source="WEB_USER"></script>
+</body>
+</html>
