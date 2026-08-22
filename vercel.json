@@ -4,6 +4,16 @@
       "source": "/servicios/rotulacion.html",
       "destination": "/servicios/vehicle-wraps.html",
       "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/servicios/uniformes",
+      "destination": "/servicios/uniformes.html",
+      "permanent": true
     }
   ]
 }
