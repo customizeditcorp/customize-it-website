@@ -561,16 +561,24 @@ const FULL_FILES = [
 function tc(s) { return s.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '); }
 function parseCity(s) { return tc(s.replace(/-ca$/, '')); }
 
+const WRAP_LABELS = {
+  'decals': 'vehicle decal',
+  'partial-wrap': 'partial wrap',
+  'full-wrap': 'full commercial wrap'
+};
+
 function parseFiles(files, wrapType, wrapFolder) {
   return files.map(f => {
     const p = f.replace('.jpg','').split('_');
+    const city = parseCity(p[3]);
     return {
       src: BASE + wrapFolder + '/' + f,
       wrap: wrapType,
       veh: p[1],
       ind: p[2],
-      city: parseCity(p[3]),
-      cap: tc(p[1]) + ' · ' + tc(p[2]) + ' · ' + parseCity(p[3])
+      city: city,
+      cap: tc(p[1]) + ' · ' + tc(p[2]) + ' · ' + city,
+      alt: tc(p[2]) + ' ' + WRAP_LABELS[wrapType] + ' ' + tc(p[1]) + ' — ' + city + ', CA | Customize It'
     };
   });
 }
@@ -633,7 +641,7 @@ function renderGrid() {
 
     const img = document.createElement('img');
     img.src = p.src;
-    img.alt = p.cap;
+    img.alt = p.alt;
     img.loading = 'lazy';
     img.decoding = 'async';
 

@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.customizeitca.com/sitemap.xml
+Sitemap: https://www.customizeitca.com/sitemap-images.xml

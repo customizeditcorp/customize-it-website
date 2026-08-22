@@ -349,12 +349,20 @@ const FULLS = [
 function tc(s) { return s.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '); }
 function parseCity(s) { return tc(s.replace(/-ca$/, '')); }
 
+const WRAP_LABELS = {
+  'decals': 'vehicle decal',
+  'partial-wrap': 'partial wrap',
+  'full-wrap': 'full commercial wrap'
+};
+
 function parseFiles(files, folder) {
   return files.map(f => {
     const p = f.replace('.jpg','').split('_');
+    const city = parseCity(p[3]);
     return {
       src: BASE + folder + '/' + f,
-      cap: tc(p[1]) + ' · ' + tc(p[2]) + ' · ' + parseCity(p[3])
+      cap: tc(p[1]) + ' · ' + tc(p[2]) + ' · ' + city,
+      alt: tc(p[2]) + ' ' + WRAP_LABELS[folder] + ' ' + tc(p[1]) + ' — ' + city + ', CA | Customize It'
     };
   });
 }
@@ -376,7 +384,7 @@ function buildStrip(containerId, items) {
     div.dataset.idx = i;
     const img = document.createElement('img');
     img.src = item.src;
-    img.alt = item.cap;
+    img.alt = item.alt;
     img.loading = 'lazy';
     const cap = document.createElement('div');
     cap.className = 'strip-caption';
